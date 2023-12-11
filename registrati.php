@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["password"])){
+    if(isset($_POST["email"]) && isset($_POST["password"])){
             $_SESSION['POST'] = $_POST;
             header('Location: /www/inserimentoUtente.php');
     }

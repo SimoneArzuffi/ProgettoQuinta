@@ -3,7 +3,7 @@
 
     session_start();
     $post = $_SESSION['POST'];
-    $la_query = "SELECT * FROM utente WHERE nome='" . $post['nome'] . "'" . "AND cognome='" . $post['cognome'] . "'";
+    $la_query = "SELECT * FROM utente WHERE email='" . $post['email'] . "'";
 	
 	if(!$risultati=$connessione->query($la_query)) {
 		echo("Errore nell'esecuzione della query: ".$connessione->error.".");

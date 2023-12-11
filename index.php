@@ -19,11 +19,7 @@
         
         
         $post = $_SESSION['POST'];
-        echo "Buogiorno " , $post['nome'] , ", login effettuato con successo </br>";
-        echo "le tue credenziali sono: </br>";
-        echo "nome: ", $post['nome'];
-        echo ", cognome: ", $post['cognome'];
-        echo ", password: ", $post['password'] , "<br/>";
+        echo "Buogiorno " , $post['email'] , ", login effettuato con successo </br>";
         echo "accesso numero: " , ($accessi + 1);
     ?>
     <body>
