@@ -18,5 +18,5 @@
 		echo "Errore: ".$la_query."<br/>".$connessione->error;
 	$connessione->close();
 
-    header('Location: /progettoQuinta/login.php');
+    header('Location: /www/login.php');
 ?>

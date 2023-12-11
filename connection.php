@@ -1,5 +1,5 @@
 <?php
-//  	Connessione al DBMS e selezione del database.
+//  Connessione al DBMS e selezione del database.
 //
 // 	nome dell'host
 //

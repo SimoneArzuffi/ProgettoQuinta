@@ -2,7 +2,7 @@
     session_start();
     if(isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["password"])){
             $_SESSION['POST'] = $_POST;
-            header('Location: /progettoQuinta/prelevaUtente.php');
+            header('Location: /www/prelevaUtente.php');
     }
 ?>
 <!DOCTYPE html>

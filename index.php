@@ -1,11 +1,11 @@
 <?php
-    $valore = 1;
+    session_start();
     if(isset($_COOKIE["accesso"])){
         setcookie("accesso", $_COOKIE["accesso"] + 1);
         $accessi = $_COOKIE['accesso'];
     }else{
-        setcookie("accesso", $valore);
         $accessi = 0;
+        setcookie("accesso", $accessi);
     }
 ?>
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
     </head>
     <?php
         
-        session_start();
+        
         $post = $_SESSION['POST'];
         echo "Buogiorno " , $post['nome'] , ", login effettuato con successo </br>";
         echo "le tue credenziali sono: </br>";

@@ -9,18 +9,17 @@
 		echo("Errore nell'esecuzione della query: ".$connessione->error.".");
 		exit();
 	} else {
-		echo("Dalla tabella ho estratto ".$risultati->num_rows." record(s):<br/><br/>");
 		if($risultati->num_rows == 1)  
 		{
 			$un_record = $risultati->fetch_array(MYSQLI_ASSOC);
             if(password_verify($post['password'], $un_record['password'])){
-                header('Location: /progettoQuinta/index.php');
+                header('Location: /www/index.php');
             }else{
                 echo "falso";
             }
 			$risultati->close();
 		}else{
-            header("Location: /progettoQuinta/login.php");
+            header("Location: /www/login.php");
         }
 	}
 	$connessione->close();
