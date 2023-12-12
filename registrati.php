@@ -10,10 +10,8 @@
     
     <body>
         <form action="registrati.php" method="POST">
-                <p>Inserisci il nome </p>
-                <input type="text" name="nome"><br>
-                <p>Inserisci il cognome </p>
-                <input type="text" name="cognome"><br>
+                <p>Inserisci l'email </p>
+                <input type="email" name="email"><br>
                 <p>Inserisci la password </p>
                 <input type="password" name="password"><br><br>
                 <input type="submit">
