@@ -11,8 +11,8 @@
     </head>
     <body>
         <form action="login.php" method="POST">
-            <input type="email" name="email"><br><br>
-            <input type="password" name="password" >
+            <input type="email" name="email" required><br><br>
+            <input type="password" name="password" required>
             <!-- inserisci la possibilità di vedere la password -->
             <input type="button" onclick="myFunction()" value="mostra password"><br><br>
             <script>
