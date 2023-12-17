@@ -1,12 +1,5 @@
 <?php
     session_start();
-    if(isset($_COOKIE["accesso"])){
-        setcookie("accesso", $_COOKIE["accesso"] + 1);
-        $accessi = $_COOKIE['accesso'];
-    }else{
-        $accessi = 0;
-        setcookie("accesso", $accessi);
-    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,12 +9,13 @@
         </title>
     </head>
     <?php
-        
-        
         $post = $_SESSION['POST'];
-        echo "Buogiorno " , $post['email'] , ", login effettuato con successo </br>";
-        echo "accesso numero: " , ($accessi + 1);
+        echo "Salve, " , $post['email'] , ", login effettuato con successo </br>";
+        
     ?>
     <body>
+        <form action="logout.php" method="POST">
+            <input type="submit" value="logout">
+        </form>
     </body>
 </html>

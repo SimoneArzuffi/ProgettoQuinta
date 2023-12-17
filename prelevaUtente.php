@@ -4,7 +4,7 @@
     session_start();
     $post = $_SESSION['POST'];
 	//sistema query per prelevare utente deve controllare se esiste la tabella utente
-    $la_query = "SELECT * FROM utente WHERE email='" . $post['email'] . "'";
+    $la_query = "SELECT * FROM gestore WHERE email='" . $post['email'] . "'";
 
 	
 	if(!$risultati=$connessione->query($la_query)) {
