@@ -19,6 +19,10 @@
             }else{
                 echo "falso";
             }
+			//salvati i dati dell'utente (nome, cognome) in sessione
+			$_SESSION['nome'] = $un_record['nome'];
+			$_SESSION['cognome'] = $un_record['cognome'];
+			$_SESSION['email'] = $un_record['email'];
 			$risultati->close();
 		}else{
             header("Location: /www/login.php");

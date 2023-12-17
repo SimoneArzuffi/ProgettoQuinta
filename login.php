@@ -3,30 +3,28 @@
 
     include "connection.php";
 
-    $la_query = "SELECT * FROM gestore";
-    //controlla se esiste la tabella gestore
+    //controlla se esiste l'utente admin
+    $la_query = "SELECT * FROM gestore WHERE email = 'admin.progettoquinta@progettoquinta.com'";
     if(!$risultati=$connessione->query($la_query)) {
         echo("Errore nell'esecuzione della query: ".$connessione->error.".");
         exit();
-    }
-    //se esiste la tabella controlla che esista l'utente admin con email admin.progettoquinta@progettoquinta.com e password admin
+    }//se non esiste l'utente admin lo crea
     else {
-        if($risultati->num_rows >= 1)  
+        if($risultati->num_rows == 0)  
         {
-            $un_record = $risultati->fetch_array(MYSQLI_ASSOC);
-            if(!password_verify("admin", $un_record['password']) && $un_record['email'] == "admin.progettoquinta@progettoquinta.com"){
-                $la_query = "INSERT INTO gestore (email, password) VALUES ('admin.progettoquinta@progettoquinta.com', '" . password_hash("admin", PASSWORD_DEFAULT) . "')";
+            $la_query = "INSERT INTO gestore (nome, cognome, email, password) VALUES ('Simone' , 'Arzuffi', 'admin.progettoquinta@progettoquinta.com', '" . password_hash("admin", PASSWORD_DEFAULT) . "')";
+            //esegui query per inserire l'utente admin
+            if(!$risultati=$connessione->query($la_query)) {
+                echo("Errore nell'esecuzione della query: ".$connessione->error.".");
+                exit();
             }
-            $risultati->close();
-        }else{
-            $la_query = "INSERT INTO gestore (email, password) VALUES ('admin.progettoquinta@progettoquinta.com', '" . password_hash("admin", PASSWORD_DEFAULT) . "')";
-            $risultati -> close();
+            $connessione -> close();
         }
     }
-    
+
     if(isset($_POST["email"]) && isset($_POST["password"])){
         $_SESSION['POST'] = $_POST;
-        header('Location: /www/prelevaUtente.php');
+        header('Location: /www/prelevaGestore.php');
     }
 ?>
 <!DOCTYPE html>
