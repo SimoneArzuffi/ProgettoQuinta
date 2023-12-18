@@ -19,7 +19,7 @@
         <form action="inserisciDipendente.php" method="POST">
             <input type="text" name="nome" placeholder="nome" required><br><br>
             <input type="text" name="cognome" placeholder="cognome" required><br><br>
-            <input type="text" name="cf" placeholder="codice fiscale" required><br><br>
+            <input type="text" name="cf" placeholder="codice fiscale" style="text-transform: uppercase;" required><br><br>
             <input type="date" name="data_di_nascita" placeholder="data di nascita" required><br><br>
             <input type="number" min="0" name="ore_di_permesso" placeholder="ore di permesso" required><br><br>
             <input type="number" min="0" name="giorni_di_ferie" placeholder="giorni di ferie" required><br><br>
