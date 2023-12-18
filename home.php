@@ -22,6 +22,9 @@
         <form action="inserisciDipendente.php" method="POST">
             <input type="submit" value="inserisci dipendente">
         </form><br><br>
+        <form action="inserisciFerie.php" method="POST">
+            <input type="submit" value="inserisci ferie">
+        </form>
         <form action="logout.php" method="POST">
             <input type="submit" value="logout">
         </form><br><br>

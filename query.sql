@@ -17,3 +17,12 @@ CREATE TABLE IF NOT EXISTS dipendente (
     giorni_di_ferie INT UNSIGNED NOT NULL,
     giorni_di_malatia INT UNSIGNED NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS ferie{
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id_dipendente INT UNSIGNED NOT NULL,
+    data_inizio DATE NOT NULL,
+    data_fine DATE NOT NULL,
+    giorni INT UNSIGNED NOT NULL,
+    FOREIGN KEY(id_dipendente) REFERENCES dipendente(id)
+};
