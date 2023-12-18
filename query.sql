@@ -6,3 +6,14 @@ CREATE TABLE gestore(
     password VARCHAR(255) NOT NULL,
     PRIMARY KEY(id)
 );
+
+CREATE TABLE IF NOT EXISTS dipendente (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    cognome VARCHAR(255) NOT NULL,
+    cf VARCHAR(16) UNIQUE NOT NULL,
+    data_di_nascita DATE NOT NULL,
+    ore_di_permesso INT UNSIGNED NOT NULL,
+    giorni_di_ferie INT UNSIGNED NOT NULL,
+    giorni_di_malatia INT UNSIGNED NOT NULL
+);

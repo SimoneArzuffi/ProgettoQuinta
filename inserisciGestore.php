@@ -2,10 +2,6 @@
 <html>
 	<?php
 		session_start();
-		//elimina $_SESSION['POST'] se esiste
-		/*if(isset($_SESSION['POST'])){
-			unset($_SESSION['POST']);
-		}*/
 		if(isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["email"]) && isset($_POST["password"])){
 			$_SESSION['POST'] = $_POST;
 			header('Location: /www/addGestore.php');
@@ -35,7 +31,7 @@
                     }
                 }
             </script>
-			<input type="submit" value="inserisci gestore">
+			<input type="submit" value="inserisci gestore"><br><br>
 			<a href="index.php">torna alla home</a>
 		</form>
 	</body>

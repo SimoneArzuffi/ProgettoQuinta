@@ -14,12 +14,16 @@
 
     ?>
     <body>
-        <form action="logout.php" method="POST">
-            <input type="submit" value="logout">
-        </form>
         <!-- inserisci la possibilita di inserire un nuovo gestore -->
         <form action="inserisciGestore.php" method="POST">
             <input type="submit" value="inserisci gestore">
-        </form>
+        </form><br><br>
+        <!-- inserisci la possibilita di inserire un nuovo dipendente -->
+        <form action="inserisciDipendente.php" method="POST">
+            <input type="submit" value="inserisci dipendente">
+        </form><br><br>
+        <form action="logout.php" method="POST">
+            <input type="submit" value="logout">
+        </form><br><br>
     </body>
 </html>
