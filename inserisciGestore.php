@@ -2,31 +2,10 @@
 <html>
 	<?php
 		session_start();
-		/*include "connection.php";
-		$post = $_SESSION['POST'];
-		//controlla se esiste il gestore che si vuole inserire
-		$la_query = "SELECT * FROM gestore WHERE email = '" . $post['email'] . "'";
-		if(!$risultati=$connessione->query($la_query)) {
-			echo("Errore nell'esecuzione della query: ".$connessione->error.".");
-			exit();
+		//elimina $_SESSION['POST'] se esiste
+		if(isset($_SESSION['POST'])){
+			unset($_SESSION['POST']);
 		}
-		else {
-			if($risultati->num_rows == 0)  
-			{
-				//esegui query per inserire il gestore
-				$la_query = "INSERT INTO gestore (nome, cognome, email, password) VALUES ('" . $post['nome'] . "' , '" . $post['cognome'] . "', '" . $post['email'] . "', '" . password_hash($post['password'], PASSWORD_DEFAULT) . "')";
-				if(!$risultati=$connessione->query($la_query)) {
-					echo("Errore nell'esecuzione della query: ".$connessione->error.".");
-					exit();
-				}
-				echo "gestore inserito con successo";
-				$connessione -> close();
-			}else{
-				echo "gestore già esistente";
-				
-			}
-		}*/
-
 		if(isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["email"]) && isset($_POST["password"])){
 			$_SESSION['POST'] = $_POST;
 			header('Location: /www/addGestore.php');

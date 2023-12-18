@@ -1,6 +1,6 @@
 <?php
-    session_start();
     include "connection.php";
+    session_start();
 
     $post = $_SESSION['POST'];
 
@@ -11,7 +11,7 @@
         exit();
     }
     else {
-        if($risultati->num_rows > 0)  
+        if($risultati->num_rows == 0)  
         {
             //esegui query per inserire il gestore
             $la_query = "INSERT INTO gestore (nome, cognome, email, password) VALUES ('" . $post['nome'] . "' , '" . $post['cognome'] . "', '" . $post['email'] . "', '" . password_hash($post['password'], PASSWORD_DEFAULT) . "')";
@@ -24,3 +24,6 @@
     }
     header("Location: inserisciGestore.php");
 ?>
+<body>
+
+</body>
