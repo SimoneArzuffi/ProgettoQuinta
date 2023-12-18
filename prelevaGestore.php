@@ -15,7 +15,7 @@
 		{
 			$un_record = $risultati->fetch_array(MYSQLI_ASSOC);
             if(password_verify($post['password'], $un_record['password'])){
-                header('Location: /www/index.php');
+                header('Location: /www/home.php');
             }else{
                 echo "falso";
             }

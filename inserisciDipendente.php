@@ -26,7 +26,7 @@
             <input type="number" min="0" name="giorni_di_malattia" placeholder="giori di malattia" required><br><br>
             <input type="submit" value="inserisci dipendente">
         </form><br><br>
-        <a href="index.php">torna alla home</a>
+        <a href="home.php">torna alla home</a>
 
     </body>
 </html>

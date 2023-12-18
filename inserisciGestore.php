@@ -32,7 +32,7 @@
                 }
             </script>
 			<input type="submit" value="inserisci gestore"><br><br>
-			<a href="index.php">torna alla home</a>
+			<a href="home.php">torna alla home</a>
 		</form>
 	</body>
 </html>
