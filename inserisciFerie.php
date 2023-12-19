@@ -3,8 +3,21 @@
     <?php
         session_start();
         if(isset($_POST['nome']) && isset($_POST['cognome']) && isset($_POST['data_inizio']) && isset($_POST['data_fine']) && isset($_POST['giorni'])){
-            $_SESSION['POST'] = $_POST;
-            header('Location: /www/addFerie.php');
+            //controllo se data inizio è minore di data fine
+            if($_POST['data_inizio'] > $_POST['data_fine']){
+                echo "data inizio maggiore di data fine";
+            }else{
+                //controlla se il numero di giorni inserito corrisponde alla differenza tra data inizio e data fine
+                $data_inizio = new DateTime($_POST['data_inizio']);
+                $data_fine = new DateTime($_POST['data_fine']);
+                $differenza = $data_inizio->diff($data_fine);
+                if($differenza->days != $_POST['giorni']){
+                    echo "numero giorni non corrispondente alla differenza tra la data di inizio e la data di fine";
+                }else{
+                    $_SESSION['POST'] = $_POST;
+                    header('Location: /www/addFerie.php');
+                }
+            }
         }
     ?>
     <head>
@@ -13,7 +26,6 @@
         </title>
     </head>
     <body>
-        <!-- inserisci la possibilita di inserire un nuovo dipendente -->
         <form action="inserisciFerie.php" method="POST">
             <input type="nome" name="nome" placeholder="nome" required><br><br>
             <input type="cognome" name="cognome" placeholder="cognome" required><br><br>
