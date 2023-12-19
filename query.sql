@@ -36,3 +36,12 @@ CREATE TABLE IF NOT EXISTS malattia(
     giorni INT UNSIGNED NOT NULL,
     FOREIGN KEY(id_dipendente) REFERENCES dipendente(id)
 );
+
+CREATE TABLE IF NOT EXISTS permesso(
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id_dipendente INT UNSIGNED NOT NULL,
+    data DATE NOT NULL,
+    ora_inizio TIME NOT NULL,
+    ora_fine TIME NOT NULL,
+    FOREIGN KEY(id_dipendente) REFERENCES dipendente(id)
+);
