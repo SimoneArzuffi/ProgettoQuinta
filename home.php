@@ -26,6 +26,9 @@
         <form action="inserisciMalattia.php" method="POST">
             <input type="submit" value="inserisci malattia">
         </form><br><br>
+        <form action="inserisciPermessi.php" method="POST">
+            <input type="submit" value="inserisci permessi">
+        </form><br><br>
         <form action="logout.php" method="POST">
             <input type="submit" value="logout">
         </form><br><br>
