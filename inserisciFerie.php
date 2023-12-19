@@ -11,7 +11,7 @@
                 $data_inizio = new DateTime($_POST['data_inizio']);
                 $data_fine = new DateTime($_POST['data_fine']);
                 $differenza = $data_inizio->diff($data_fine);
-                if($differenza->days != $_POST['giorni']){
+                if($differenza->days != $_POST['giorni'] - 1){
                     echo "numero giorni non corrispondente alla differenza tra la data di inizio e la data di fine";
                 }else{
                     $_SESSION['POST'] = $_POST;
