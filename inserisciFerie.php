@@ -2,7 +2,8 @@
 <html>
     <?php
         session_start();
-        if(isset($_SESSION['nome']) && isset($_SESSION['cognome']) && isset($_SESSION['data_inizio']) && isset($_SESSION['data_fine']) && isset($_SESSION['giorni'])){
+        if(isset($_POST['nome']) && isset($_POST['cognome']) && isset($_POST['data_inizio']) && isset($_POST['data_fine']) && isset($_POST['giorni'])){
+            $_SESSION['POST'] = $_POST;
             header('Location: /www/addFerie.php');
         }
     ?>

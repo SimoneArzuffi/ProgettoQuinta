@@ -4,7 +4,6 @@
 
     $post = $_SESSION['POST'];
 
-    //estrai id del dipendente partendo dal mnome e dal cognome
     $la_query = "SELECT id FROM dipendente WHERE nome = '" . $post['nome'] . "' AND cognome = '" . $post['cognome'] . "'";
     if(!$risultati=$connessione->query($la_query)) {
         echo("Errore nell'esecuzione della query: ".$connessione->error.".");
@@ -18,8 +17,6 @@
             $risultati->close();
         }
     }
-
-    //inserisci ferie nella tabella ferie
     $la_query = "INSERT INTO ferie (id_dipendente, data_inizio, data_fine, giorni) VALUES ('" . $id . "' , '" . $post['data_inizio'] . "', '" . $post['data_fine'] . "', '" . $post['giorni'] . "')";
     if(!$risultati=$connessione->query($la_query)) {
         echo("Errore nell'esecuzione della query: ".$connessione->error.".");
