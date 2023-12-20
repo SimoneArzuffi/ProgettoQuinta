@@ -32,7 +32,7 @@ di seguito è elencato il mockup
 ![tabella permessi](image-8.png)
 
 #### aggiungi dipendente
-![aggiungi dipendente](image-9.png)
+![inserisci dipendente](image-16.png)
 
 #### rimuovi dipendente
 ![rimuovi dipendente](image-10.png)
