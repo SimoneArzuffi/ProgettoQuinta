@@ -3,12 +3,12 @@
 
 Questa Web App prevede le seguenti funzionalità:
 
-	- da la possibilità di inserire e rimuovere i propri dipendenti
+	- da la possibilità di inserire e rimuovere i propri dipendenti (done)
  	- da la possibilità di inserire i gestori dei dipendenti, che possono inserire nuovi dipendenti, inserire le ferie, le 		 
-	  malattie e i permessi dei vari dipendenti.
-	- garantisce la possibilià di inserire le malattie di un dipendente e di visualizzare le malattie dei dipendenti in una tabella
- 	- garantisce la possibilità di inserire le ferie dei dipendenti e di visualizzarle in una tabella
-	- garantisce la possibilità di inserie i permessi dei dipendenti e di visualizzarli in una tabella
+	  malattie e i permessi dei vari dipendenti. (done)
+	- garantisce la possibilià di inserire le malattie di un dipendente e di visualizzare le malattie dei dipendenti in una tabella (to do)
+ 	- garantisce la possibilità di inserire le ferie dei dipendenti e di visualizzarle in una tabella (to do)
+	- garantisce la possibilità di inserie i permessi dei dipendenti e di visualizzarli in una tabella (to do)
 
 di seguito è elencato il mockup
 
