@@ -17,13 +17,14 @@
     <body>
         <!-- inserisci la possibilita di inserire un nuovo dipendente -->
         <form action="inserisciDipendente.php" method="POST">
+            <p>inserisci il nome del dipendente</p>
             <input type="text" name="nome" placeholder="nome" required><br><br>
+            <p>inserisci il cognome del dipendente</p>
             <input type="text" name="cognome" placeholder="cognome" required><br><br>
+            <p>inserisci il codice fiscale del dipendente</p>
             <input type="text" name="cf" placeholder="codice fiscale" style="text-transform: uppercase;" required><br><br>
+            <p>inserisci la data di nascita del dipendente</p>
             <input type="date" name="data_di_nascita" placeholder="data di nascita" required><br><br>
-            <input type="number" min="0" name="ore_di_permesso" placeholder="ore di permesso" required><br><br>
-            <input type="number" min="0" name="giorni_di_ferie" placeholder="giorni di ferie" required><br><br>
-            <input type="number" min="0" name="giorni_di_malattia" placeholder="giori di malattia" required><br><br>
             <input type="submit" value="inserisci dipendente">
         </form><br><br>
         <a href="home.php">torna alla home</a>

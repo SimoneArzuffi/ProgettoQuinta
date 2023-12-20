@@ -27,10 +27,15 @@
     </head>
     <body>
         <form action="inserisciFerie.php" method="POST">
+            <p>inserisci il nome del dipendente</p>
             <input type="nome" name="nome" placeholder="nome" required><br><br>
+            <p>inserisci il cognome del dipendente</p>
             <input type="cognome" name="cognome" placeholder="cognome" required><br><br>
+            <p>inserisci la data di inizio</p>
             <input type="date" name="data_inizio" placeholder="data inizio" required><br><br>
+            <p>inserisci la data di fine</p>
             <input type="date" name="data_fine" placeholder="data fine" required><br><br>
+            <p>inserisci il numero di giorni</p>
             <input type="number" min="0" name="giorni" placeholder="giorni" required><br><br>
             <input type="submit" value="inserisci ferie">
         </form><br>
