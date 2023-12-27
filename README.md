@@ -14,41 +14,41 @@ di seguito è elencato il mockup
 
 #### login pagine
 
-![login](image-1.png)
+![login](immagini/image-1.png)
 
 #### home page
-![home page](image-4.png)
+![home page](immagini/image-4.png)
 
 #### tabella ferie
-![tabella ferie](image-5.png)
+![tabella ferie](immagini/image-5.png)
 
 #### tabella malattie
-!![tabella malattie](image-6.png)
+!![tabella malattie](immagini/image-6.png)
 
 #### tabella dipendenti
-![tabella dipendenti](image-7.png)
+![tabella dipendenti](immagini/image-7.png)
 
 #### tabella permessi
-![tabella permessi](image-8.png)
+![tabella permessi](immagini/image-8.png)
 
 #### aggiungi dipendente
-![inserisci dipendente](image-16.png)
+![inserisci dipendente](immagini/image-16.png)
 
 #### rimuovi dipendente
-![rimuovi dipendente](image-10.png)
+![rimuovi dipendente](immagini/image-10.png)
 
 #### inserisci malattia
-![inserisci malattia](image-12.png)
+![inserisci malattia](immagini/image-12.png)
 
 #### inserisci ferie
-![inserisci ferie](image-13.png)
+![inserisci ferie](immagini/image-13.png)
 
 #### inserisci permesso
-![inserisci permesso](image-15.png)
+![inserisci permesso](immagini/image-15.png)
 
 
 ###### E/R
-![E/R](image.png)
+![E/R](immagini/image.png)
 
 ###### schema relazionale
 
