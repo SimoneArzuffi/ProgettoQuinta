@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if(!isset($_SESSION['nome'])){
+        header("Location: login.php");
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +14,6 @@
     <?php
         $post = $_SESSION['POST'];
         echo "Salve, " , $_SESSION['nome'], ", login effettuato con successo </br>";
-
     ?>
     <body>
         <form action="inserisciGestore.php" method="POST">
