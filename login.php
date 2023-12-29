@@ -29,28 +29,80 @@
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            login
-        </title>
-    </head>
-    <body>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+
+        .welcome-section {
+            text-align: center;
+            margin-bottom: 50px;
+            resize: none;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="email"],
+        input[type="password"],
+        input[type="text"],
+        input[type="submit"],
+        input[type="button"] {
+            width: calc(100% - 10px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            resize: none;
+        }
+        
+        input[type="button"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-section">
+            <h1>Benvenuto!</h1>
+            <p>Effettua l'accesso per continuare.</p>
+        </div>
+
+        <script src="mostraPsw.js"></script>
+
         <form action="login.php" method="POST">
-            <input type="email" name="email" required><br><br>
-            <input type="password" name="password" required>
-            <!-- inserisci la possibilità di vedere la password -->
-            <input type="button" onclick="myFunction()" value="mostra password"><br><br>
-            <script>
-                function myFunction() {
-                    var x = document.getElementsByName("password")[0];
-                    if (x.type === "password") {
-                        x.type = "text";
-                    } else {
-                        x.type = "password";
-                    }
-                }
-            </script>
-            <input type="submit">
+            <input type="email" name="email" placeholder="Email" required><br><br>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="button" onclick="myFunction()" value="Mostra Password"><br><br>
+            <input type="submit" value="Accedi">
         </form><br>
-    </body>
+
+    </div>
+</body>
 </html>
