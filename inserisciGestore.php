@@ -56,6 +56,19 @@
             input[type="button"]:hover {
                 background-color: #0056b3;
             }
+
+			a {
+                display: block;
+                margin-top: 10px;
+                text-align: center;
+                text-decoration: none;
+                color: #007bff;
+            }
+
+			a:hover {
+                text-decoration: underline;
+            }
+
         </style>
     </head>
     <body>
