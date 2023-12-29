@@ -80,11 +80,20 @@
             cursor: pointer;
         }
 
+        input[type="button"]:hover {
+            background-color: #46a049;
+        }
+
         input[type="submit"] {
             background-color: #007bff;
             color: #fff;
             cursor: pointer;
         }
+
+        input[type="submit"]:hover {
+            background-color: #0069d9;
+        }
+
     </style>
 </head>
 <body>
