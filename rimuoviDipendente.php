@@ -29,7 +29,6 @@
             p {
                 margin-top: 10px;
                 margin-bottom: 5px;
-                font-weight: bold;
             }
 
             input[type="text"],
