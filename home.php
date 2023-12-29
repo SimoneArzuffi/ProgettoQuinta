@@ -1,42 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
 <?php
     session_start();
-    if(!isset($_SESSION['nome'])){
+    if (!isset($_SESSION['nome'])) {
         header("Location: login.php");
     }
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            home page
-        </title>
-    </head>
-    <?php
-        $post = $_SESSION['POST'];
-        echo "Salve, " , $_SESSION['nome'], ", login effettuato con successo </br>";
-    ?>
-    <body>
-        <form action="inserisciGestore.php" method="POST">
-            <input type="submit" value="inserisci gestore">
-        </form><br><br>
-        <form action="inserisciDipendente.php" method="POST">
-            <input type="submit" value="inserisci dipendente">
-        </form><br><br>
-        <form action="rimuoviDipendente.php" method="POST">
-            <input type="submit" value="rimuovi dipendente">
-        </form><br><br>
-        <form action="inserisciFerie.php" method="POST">
-            <input type="submit" value="inserisci ferie">
-        </form><br><br>
-        <form action="inserisciMalattia.php" method="POST">
-            <input type="submit" value="inserisci malattia">
-        </form><br><br>
-        <form action="inserisciPermessi.php" method="POST">
-            <input type="submit" value="inserisci permessi">
-        </form><br><br>
-        <form action="logout.php" method="POST">
-            <input type="submit" value="logout">
-        </form><br><br>
+<body>
+    <div class="container">
+        <h1>Benvenuto, <?php echo $_SESSION['nome']; ?>!</h1>
+        <p>Login effettuato con successo.</p>
 
-    </body>
+        <div class="button-container">
+            <form action="inserisciGestore.php" method="POST"><input type="submit" value="Inserisci Gestore"></form>
+            <form action="inserisciDipendente.php" method="POST"><input type="submit" value="Inserisci Dipendente"></form>
+            <form action="rimuoviDipendente.php" method="POST"><input type="submit" value="Rimuovi Dipendente"></form>
+            <form action="inserisciFerie.php" method="POST"><input type="submit" value="Inserisci Feria"></form>
+            <form action="inserisciMalattia.php" method="POST"><input type="submit" value="Inserisci Malattia"></form>
+            <form action="inserisciPermessi.php" method="POST"><input type="submit" value="Inserisci Permessi"></form>
+            <form action="logout.php" method="POST"><input type="submit" value="Logout"></form>
+        </div>
+    </div>
+</body>
 </html>
