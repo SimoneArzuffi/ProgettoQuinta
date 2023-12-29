@@ -21,24 +21,79 @@
         }
     ?>
     <head>
-        <title>
-            inserisci ferie
-        </title>
+        <title>Inserisci Ferie</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background-color: #f4f4f4;
+            }
+
+            form {
+                width: 300px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            p {
+                margin-top: 10px;
+                margin-bottom: 5px;
+            }
+
+            input[type="text"],
+            input[type="date"],
+            input[type="number"],
+            input[type="submit"] {
+                width: calc(100% - 10px);
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+
+            input[type="submit"] {
+                background-color: #28a745;
+                color: #fff;
+                cursor: pointer;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #218838;
+            }
+
+            a {
+                display: block;
+                margin-top: 10px;
+                text-align: center;
+                text-decoration: none;
+                color: #007bff;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
     </head>
     <body>
         <form action="inserisciFerie.php" method="POST">
-            <p>inserisci il nome del dipendente</p>
-            <input type="nome" name="nome" placeholder="nome" required><br><br>
-            <p>inserisci il cognome del dipendente</p>
-            <input type="cognome" name="cognome" placeholder="cognome" required><br><br>
-            <p>inserisci la data di inizio</p>
-            <input type="date" name="data_inizio" placeholder="data inizio" required><br><br>
-            <p>inserisci la data di fine</p>
-            <input type="date" name="data_fine" placeholder="data fine" required><br><br>
-            <p>inserisci il numero di giorni</p>
-            <input type="number" min="0" name="giorni" placeholder="giorni" required><br><br>
-            <input type="submit" value="inserisci ferie">
-        </form><br>
-        <a href="home.php">torna alla home</a>
+            <p>Inserisci il nome del dipendente</p>
+            <input type="text" name="nome" placeholder="Nome" required><br>
+            <p>Inserisci il cognome del dipendente</p>
+            <input type="text" name="cognome" placeholder="Cognome" required><br>
+            <p>Inserisci la data di inizio</p>
+            <input type="date" name="data_inizio" placeholder="Data inizio" required><br>
+            <p>Inserisci la data di fine</p>
+            <input type="date" name="data_fine" placeholder="Data fine" required><br>
+            <p>Inserisci il numero di giorni</p>
+            <input type="number" min="0" name="giorni" placeholder="Giorni" required><br>
+            <input type="submit" value="Inserisci Ferie">
+        </form>
+        <br>
+        <a href="home.php">Torna alla Home</a>
     </body>
 </html>
