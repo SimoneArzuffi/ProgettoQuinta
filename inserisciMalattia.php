@@ -86,13 +86,15 @@
             <input type="text" name="nome" placeholder="Nome" required><br>
             <p>Inserisci il cognome del dipendente</p>
             <input type="text" name="cognome" placeholder="Cognome" required><br>
+            <p>inserisci il numero della malattia</p>
+            <input type="text" minlength="9" maxlength="9" name="numero_malattia" placeholder="Numero malattia" required><br>
             <p>Inserisci la data di inizio</p>
             <input type="date" name="data_inizio" placeholder="Data inizio" required><br>
             <p>Inserisci la data di fine</p>
             <input type="date" name="data_fine" placeholder="Data fine" required><br>
             <p>Inserisci il numero di giorni</p>
             <input type="number" min="0" name="giorni" placeholder="Giorni" required><br>
-            <input type="submit" value="Inserisci Ferie">
+            <input type="submit" value="Inserisci malattia">
         </form>
         <br>
         <a href="home.php">Torna alla Home</a>

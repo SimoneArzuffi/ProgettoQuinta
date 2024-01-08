@@ -22,6 +22,6 @@
         echo("Errore nell'esecuzione della query: ".$connessione->error.".");
         exit();
     }else{
-        header("Location: inserisciGestore.php");
+        header("Location: inserisciFerie.php");
     }
 ?>
