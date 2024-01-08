@@ -43,16 +43,6 @@
             }
         </style>
     </head>
-    <body>
-        <h1> WORK IN PROGRESS </h1>
-        <!--
-            1. crea pulsante che estrae e mette i dipendenti in una tabella
-            2. crea pulsante che estrae solo il dipendente selezionato e lo mette in una tabella
-        -->
-        <div class="button-container">
-            <form action="mostraDipendenti.php" method="POST"><input type="submit" value="Visualizza Dipendenti"></form>
-        </div>
-    </body>
     <?php
         if (isset($_POST['submit'])) {
             $query = "SELECT * FROM dipendente";
@@ -81,4 +71,14 @@
             echo "</table>";
         }
     ?>
+    <body>
+        <h1> WORK IN PROGRESS </h1>
+        <!--
+            1. crea pulsante che estrae e mette i dipendenti in una tabella
+            2. crea pulsante che estrae solo il dipendente selezionato e lo mette in una tabella
+        -->
+        <div class="button-container">
+            <form action="mostraDipendenti.php" method="POST"><input type="submit" value="Visualizza Dipendenti"></form>
+        </div>
+    </body>
 </html>
