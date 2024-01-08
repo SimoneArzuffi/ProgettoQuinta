@@ -53,7 +53,7 @@
         <div class="button-container">
             <form action="inserisciGestore.php" method="POST"><input type="submit" value="Inserisci Gestore"></form>
             <form action="inserisciDipendente.php" method="POST"><input type="submit" value="Inserisci Dipendente"></form>
-            <form action="selectDipendente.php" method="POST"><input type="submit" value="Visualizza Dipendente"></form>
+            <form action="selectDipendente.php" method="POST"><input type="submit" value="Visualizza Dipendenti"></form>
             <form action="rimuoviDipendente.php" method="POST"><input type="submit" value="Rimuovi Dipendente"></form>
             <form action="inserisciFerie.php" method="POST"><input type="submit" value="Inserisci Ferie"></form>
             <form action="inserisciMalattia.php" method="POST"><input type="submit" value="Inserisci Malattia"></form>
