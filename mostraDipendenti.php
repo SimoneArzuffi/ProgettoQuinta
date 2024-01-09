@@ -1,84 +1,51 @@
+<?php
+    session_start();
+    include "connection.php";
+?>
 <!DOCTYPE html>
 <html>
-    <?php
-        session_start();
-        include "connection.php"; 
-    ?>
     <head>
-        <title>mostra dipendenti</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f4f4f4;
-            }
-
-            .container {
-                width: 80%;
-                margin: 50px auto;
-                text-align: center;
-            }
-
-            .button-container {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-                margin-bottom: 20px;
-            }
-
-            input[type="submit"] {
-                padding: 10px 20px;
-                font-size: 16px;
-                background-color: #4caf50;
-                color: #fff;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-
-            input[type="submit"]:hover {
-                background-color: #45a049;
-            }
-        </style>
+        <title>Mostra dipendenti</title>
     </head>
-    <?php
-        if (isset($_POST['submit'])) {
-            $query = "SELECT * FROM dipendente";
-            $result = mysqli_query($connessione, $query);
-            echo "<table>";
-            echo "<tr>";
-            echo "<th>Nome</th>";
-            echo "<th>Cognome</th>";
-            echo "<th>CF</th>";
-            echo "<th>Data di nascita</th>";
-            echo "<th>Ore di permesso</th>";
-            echo "<th>Giorni di ferie</th>";
-            echo "<th>Giorni di malattia</th>";
-            echo "</tr>";
-            while ($row = mysqli_fetch_array($result)) {
-                echo "<tr>";
-                echo "<td>" . $row['nome'] . "</td>";
-                echo "<td>" . $row['cognome'] . "</td>";
-                echo "<td>" . $row['cf'] . "</td>";
-                echo "<td>" . $row['data_di_nascita'] . "</td>";
-                echo "<td>" . $row['ore_di_permesso'] . "</td>";
-                echo "<td>" . $row['giorni_di_ferie'] . "</td>";
-                echo "<td>" . $row['giorni_di_malattia'] . "</td>";
-                echo "</tr>";
-            }
-            echo "</table>";
-        }
-    ?>
     <body>
-        <h1> WORK IN PROGRESS </h1>
-        <!--
-            1. crea pulsante che estrae e mette i dipendenti in una tabella
-            2. crea pulsante che estrae solo il dipendente selezionato e lo mette in una tabella
-        -->
-        <div class="button-container">
-            <form action="mostraDipendenti.php" method="POST"><input type="submit" value="Visualizza Dipendenti"></form>
-        </div>
+        <!--aggiungi la possibilità di selezionare il dipendente desiderato tramite nome e cognome-->
+        <form action="mostraDipendenti.php" method="post">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome">
+            <label for="cognome">Cognome</label>
+            <input type="text" name="cognome" id="cognome">
+            <input type="submit" value="Cerca">
+        </form>
+        <?php
+            if(isset($_POST["nome"]) && isset($_POST["cognome"])){
+                $nome = $_POST["nome"];
+                $cognome = $_POST["cognome"];
+                $query = "SELECT * FROM dipendente WHERE nome = '$nome' AND cognome = '$cognome'";
+            }else{
+                $query = "SELECT * FROM dipendente";
+            }
+            $result = mysqli_query($connessione, $query);
+            if (mysqli_num_rows($result) > 0) {
+                echo "<table border='1'>";
+                echo "<tr>";
+                echo "<th>Nome</th>";
+                echo "<th>Cognome</th>";
+                echo "<th>codice fiscale</th>";
+                echo "<th>data di nascita</th>";
+                echo "</tr>";
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>";
+                    echo "<td>" . $row["nome"] . "</td>";
+                    echo "<td>" . $row["cognome"] . "</td>";
+                    echo "<td>" . $row["cf"] . "</td>";
+                    echo "<td>" . $row["data_di_nascita"] . "</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+            } else {
+                echo "0 results";
+            }
+        ?>
+        <a href="home.php">Torna alla home</a>
     </body>
 </html>
