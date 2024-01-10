@@ -45,6 +45,9 @@
 				color: #fff;
 				cursor: pointer;
 			}
+            input[type="submit"]:hover {
+                background-color: #218838;
+            }
 
             input[type="submit"]{
                 background-color: #4caf50;
@@ -52,11 +55,10 @@
                 cursor: pointer;
             }
 
-            input[type="submit"]:hover,
-            input[type="button"]:hover {
-                background-color: #0056b3;
+            input[type="submit"]:hover
+            {
+                background-color: #218838;
             }
-
 			a {
                 display: block;
                 margin-top: 10px;
