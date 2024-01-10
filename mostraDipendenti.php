@@ -93,20 +93,22 @@
             <input type="text" name="cognome" id="cognome">
             <input type="submit" value="Cerca">
             <!--aggiungi la possibilità di far vedere tutti i dipendenti-->
-            <input type="submit" value="Mostra tutti i dipendenti">
+            <input type="submit" name="mostraTutti" value="Mostra tutti i dipendenti">
         </form>
         <?php
-            if(isset($_POST["nome"]) && isset($_POST["cognome"])){
+            if(isset($_POST["mostraTutti"])){
+                $query = "SELECT * FROM dipendente";
+            } else if(isset($_POST["nome"]) && isset($_POST["cognome"])){
                 $nome = $_POST["nome"];
                 $cognome = $_POST["cognome"];
                 $query = "SELECT * FROM dipendente WHERE nome = '$nome' AND cognome = '$cognome'";
-            }else if(isset($_POST["nome"])){
+            } else if(isset($_POST["nome"]) && !isset($_POST["cognome"])){
                 $nome = $_POST["nome"];
                 $query = "SELECT * FROM dipendente WHERE nome = '$nome'";
-            }else if(isset($_POST["cognome"])){
+            } else if(isset($_POST["cognome"]) && !isset($_POST["nome"])){
                 $cognome = $_POST["cognome"];
                 $query = "SELECT * FROM dipendente WHERE cognome = '$cognome'";
-            }else{
+            } else {
                 $query = "SELECT * FROM dipendente";
             }
             $result = mysqli_query($connessione, $query);
