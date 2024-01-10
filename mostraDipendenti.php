@@ -102,10 +102,10 @@
                 $nome = $_POST["nome"];
                 $cognome = $_POST["cognome"];
                 $query = "SELECT * FROM dipendente WHERE nome = '$nome' AND cognome = '$cognome'";
-            } else if(isset($_POST["nome"]) && !isset($_POST["cognome"])){
+            } else if(isset($_POST["nome"]) && is_null($_POST["cognome"])){
                 $nome = $_POST["nome"];
                 $query = "SELECT * FROM dipendente WHERE nome = '$nome'";
-            } else if(isset($_POST["cognome"]) && !isset($_POST["nome"])){
+            } else if(isset($_POST["cognome"]) && is_null($_POST["nome"])){
                 $cognome = $_POST["cognome"];
                 $query = "SELECT * FROM dipendente WHERE cognome = '$cognome'";
             } else {
