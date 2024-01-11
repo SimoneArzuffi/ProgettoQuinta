@@ -99,49 +99,53 @@
             if(isset($_POST["mostraTutti"])){
                 $query1 = "SELECT * FROM dipendente";
                 $result = mysqli_query($connessione, $query1);
-            } else if($_POST["nome"] != "" && $_POST["cognome"] != ""){
-                $nome = $_POST["nome"];
-                $cognome = $_POST["cognome"];
-                $query2 = "SELECT * FROM dipendente WHERE nome = '$nome' AND cognome = '$cognome'";
-                $result = mysqli_query($connessione, $query2);
-                echo $query2 , "<br>";
-            } else if($_POST["nome"] != "" && $_POST["cognome"] == ""){
-                $nome = $_POST["nome"];
-                $query3 = "SELECT * FROM dipendente WHERE nome = '$nome'";
-                $result = mysqli_query($connessione, $query3);
-                echo $query3 , "<br>";
-            } else if($_POST["nome"] == "" && $_POST["cognome"] != ""){
-                $cognome = $_POST["cognome"];
-                $query4 = "SELECT * FROM dipendente WHERE cognome = '$cognome'";
-                $result = mysqli_query($connessione, $query4);
-            } else {
-                $query1 = "SELECT * FROM dipendente";
-                $result = mysqli_query($connessione, $query1);
-            }
-
-            if (mysqli_num_rows($result) > 0) {
-                echo "<table border='1'>";
-                echo "<tr>";
-                echo "<th>Nome</th>";
-                echo "<th>Cognome</th>";
-                echo "<th>codice fiscale</th>";
-                echo "<th>data di nascita</th>";
-                echo "</tr>";
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<tr>";
-                    echo "<td>" . $row["nome"] . "</td>";
-                    echo "<td>" . $row["cognome"] . "</td>";
-                    echo "<td>" . $row["cf"] . "</td>";
-                    //stampa date in formato italiano
-                    $data = $row["data_di_nascita"];
-                    $data = explode("-", $data);
-                    $data = $data[2] . "/" . $data[1] . "/" . $data[0];
-                    echo "<td>" . $data . "</td>";
-                    echo "</tr>";
+            }elseif(isset($_POST["nome"]) && isset($_POST["cognome"])){
+                if($_POST["nome"] != "" && $_POST["cognome"] != ""){
+                    $nome = $_POST["nome"];
+                    $cognome = $_POST["cognome"];
+                    $query2 = "SELECT * FROM dipendente WHERE nome = '$nome' AND cognome = '$cognome'";
+                    $result = mysqli_query($connessione, $query2);
+                    echo $query2 , "<br>";
+                } elseif($_POST["nome"] != "" && $_POST["cognome"] == ""){
+                    $nome = $_POST["nome"];
+                    $query3 = "SELECT * FROM dipendente WHERE nome = '$nome'";
+                    $result = mysqli_query($connessione, $query3);
+                    echo $query3 , "<br>";
+                } elseif($_POST["nome"] == "" && $_POST["cognome"] != ""){
+                    $cognome = $_POST["cognome"];
+                    $query4 = "SELECT * FROM dipendente WHERE cognome = '$cognome'";
+                    $result = mysqli_query($connessione, $query4);
+                } else {
+                    $query1 = "SELECT * FROM dipendente";
+                    $result = mysqli_query($connessione, $query1);
                 }
-                echo "</table>";
-            } else {
-                echo "0 results";
+            }
+            //controllo che la variabile $result non sia nulla
+            if(isset($result)){
+                if (mysqli_num_rows($result) > 0) {
+                    echo "<table border='1'>";
+                    echo "<tr>";
+                    echo "<th>Nome</th>";
+                    echo "<th>Cognome</th>";
+                    echo "<th>codice fiscale</th>";
+                    echo "<th>data di nascita</th>";
+                    echo "</tr>";
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<tr>";
+                        echo "<td>" . $row["nome"] . "</td>";
+                        echo "<td>" . $row["cognome"] . "</td>";
+                        echo "<td>" . $row["cf"] . "</td>";
+                        //stampa date in formato italiano
+                        $data = $row["data_di_nascita"];
+                        $data = explode("-", $data);
+                        $data = $data[2] . "/" . $data[1] . "/" . $data[0];
+                        echo "<td>" . $data . "</td>";
+                        echo "</tr>";
+                    }
+                    echo "</table>";
+                } else {
+                    echo "0 results";
+                }
             }
         ?>
         <a href="home.php">Torna alla home</a>
