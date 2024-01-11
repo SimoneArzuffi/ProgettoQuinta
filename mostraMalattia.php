@@ -57,22 +57,71 @@
                 text-decoration: none;
                 color: #007bff;
             }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+
+            th, td {
+                padding: 10px;
+                border: 1px solid #ccc;
+            }
+
+            th {
+                background-color: #4caf50;
+                color: #fff;
+            }
+
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
         </style>
     </head>
     <body>
         <form action="mostraMalattia.php" method="POST">
-            <h1>Mostra malattia</h1>
-            <p>Nome dipendente</p>
-            <select name="nomeDipendente">
-                <?php
-                    $query = "SELECT nome FROM dipendenti";
-                    $result = mysqli_query($conn, $query);
-                    while ($row = mysqli_fetch_array($result)) {
-                        echo "<option value='" . $row['nome'] . "'>" . $row['nome'] . "</option>";
-                    }
-                ?>
-            </select>
-            <input type="submit" value="Mostra">
+            <input type="submit" nome="mostraTutti" value="Mostra malattie">
         </form>
         <a href="home.php">Torna alla home</a>
+        <?php
+        
+            //if(isset($_POST['mostraTutti'])){
+                $query = "SELECT nome, cognome, numero_malattia, data_inizio, data_fine, giorni FROM dipendente, malattia WHERE dipendente.id = malattia.id_dipendente";
+                $result = mysqli_query($connessione, $query);
+            //}
+            
+            if(isset($result)){
+                if (mysqli_num_rows($result) > 0) {
+                    echo "<table border='1'>";
+                    echo "<tr>";
+                    echo "<th>Nome</th>";
+                    echo "<th>Cognome</th>";
+                    echo "<th>Numero malattia</th>";
+                    echo "<th>Data inizio</th>";
+                    echo "<th>Data fine</th>";
+                    echo "</tr>";
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<tr>";
+                        echo "<td>" . $row['nome'] . "</td>";
+                        echo "<td>" . $row['cognome'] . "</td>";
+                        echo "<td>" . $row['numero_malattia'] . "</td>";
+                        $data_inizio = $row['data_inizio'];
+                        $data_inizio = explode("-", $data_inizio);
+                        $data_inizio = $data_inizio[2] . "/" . $data_inizio[1] . "/" . $data_inizio[0];
+                        echo "<td>" . $data_inizio . "</td>";
+                        $data_fine = $row['data_fine'];
+                        $data_fine = explode("-", $data_fine);
+                        $data_fine = $data_fine[2] . "/" . $data_fine[1] . "/" . $data_fine[0];
+                        echo "<td>" . $data_fine . "</td>";
+                        echo "</tr>";
+                    }
+                    echo "</table>";
+                } else {
+                    echo "Nessun risultato";
+                }
+            }
+        ?>
+        
     </body>
+</html>
