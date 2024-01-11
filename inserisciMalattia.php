@@ -15,7 +15,7 @@
                     echo "numero giorni non corrispondente alla differenza tra la data di inizio e la data di fine";
                 }else{
                     $_SESSION['POST'] = $_POST;
-                    header('Location: /www/addFerie.php');
+                    header('Location: /www/addmalattia.php');
                 }
             }
         }
@@ -81,7 +81,7 @@
         </style>
     </head>
     <body>
-        <form action="inserisciFerie.php" method="POST">
+        <form action="inserisciMalattia.php" method="POST">
             <p>Inserisci il nome del dipendente</p>
             <input type="text" name="nome" placeholder="Nome" required><br>
             <p>Inserisci il cognome del dipendente</p>
