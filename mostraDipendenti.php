@@ -97,21 +97,28 @@
         </form>
         <?php
             if(isset($_POST["mostraTutti"])){
-                $query = "SELECT * FROM dipendente";
-            } else if(isset($_POST["nome"]) && isset($_POST["cognome"])){
+                $query1 = "SELECT * FROM dipendente";
+                $result = mysqli_query($connessione, $query1);
+            } else if($_POST["nome"] != "" && $_POST["cognome"] != ""){
                 $nome = $_POST["nome"];
                 $cognome = $_POST["cognome"];
-                $query = "SELECT * FROM dipendente WHERE nome = '$nome' AND cognome = '$cognome'";
-            } else if(isset($_POST["nome"]) && is_null($_POST["cognome"])){
+                $query2 = "SELECT * FROM dipendente WHERE nome = '$nome' AND cognome = '$cognome'";
+                $result = mysqli_query($connessione, $query2);
+                echo $query2 , "<br>";
+            } else if($_POST["nome"] != "" && $_POST["cognome"] == ""){
                 $nome = $_POST["nome"];
-                $query = "SELECT * FROM dipendente WHERE nome = '$nome'";
-            } else if(isset($_POST["cognome"]) && is_null($_POST["nome"])){
+                $query3 = "SELECT * FROM dipendente WHERE nome = '$nome'";
+                $result = mysqli_query($connessione, $query3);
+                echo $query3 , "<br>";
+            } else if($_POST["nome"] == "" && $_POST["cognome"] != ""){
                 $cognome = $_POST["cognome"];
-                $query = "SELECT * FROM dipendente WHERE cognome = '$cognome'";
+                $query4 = "SELECT * FROM dipendente WHERE cognome = '$cognome'";
+                $result = mysqli_query($connessione, $query4);
             } else {
-                $query = "SELECT * FROM dipendente";
+                $query1 = "SELECT * FROM dipendente";
+                $result = mysqli_query($connessione, $query1);
             }
-            $result = mysqli_query($connessione, $query);
+
             if (mysqli_num_rows($result) > 0) {
                 echo "<table border='1'>";
                 echo "<tr>";
@@ -125,7 +132,11 @@
                     echo "<td>" . $row["nome"] . "</td>";
                     echo "<td>" . $row["cognome"] . "</td>";
                     echo "<td>" . $row["cf"] . "</td>";
-                    echo "<td>" . $row["data_di_nascita"] . "</td>";
+                    //stampa date in formato italiano
+                    $data = $row["data_di_nascita"];
+                    $data = explode("-", $data);
+                    $data = $data[2] . "/" . $data[1] . "/" . $data[0];
+                    echo "<td>" . $data . "</td>";
                     echo "</tr>";
                 }
                 echo "</table>";
