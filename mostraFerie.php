@@ -107,8 +107,8 @@
                 if (mysqli_num_rows($result) > 0) {
                     echo "<table>";
                     echo "<tr>";
-                    echo "<th>Id</th>";
-                    echo "<th>Id dipendente</th>";
+                    echo "<th>Nome</th>";
+                    echo "<th>Cognome</th>";
                     echo "<th>Data inizio</th>";
                     echo "<th>Data fine</th>";
                     echo "<th>Giorni</th>";
