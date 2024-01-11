@@ -64,24 +64,24 @@
                 margin-top: 20px;
             }
 
-            table,
-            th,
-            td {
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+
+            th, td {
+                padding: 10px;
                 border: 1px solid #ccc;
             }
 
-            th,
-            td {
-                padding: 10px;
-                text-align: left;
+            th {
+                background-color: #4caf50;
+                color: #fff;
             }
 
             tr:nth-child(even) {
                 background-color: #f2f2f2;
-            }
-
-            tr:hover {
-                background-color: #e2e2e2;
             }
         </style>
     </head>
