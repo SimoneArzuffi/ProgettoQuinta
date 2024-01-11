@@ -15,7 +15,7 @@
                     echo "numero giorni non corrispondente alla differenza tra la data di inizio e la data di fine";
                 }else{
                     $_SESSION['POST'] = $_POST;
-                    header('Location: /www/addmalattia.php');
+                    header('Location: /www/addMalattia.php');
                 }
             }
         }
