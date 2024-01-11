@@ -64,12 +64,6 @@
                 margin-top: 20px;
             }
 
-            table {
-                width: 100%;
-                border-collapse: collapse;
-                margin-top: 20px;
-            }
-
             th, td {
                 padding: 10px;
                 border: 1px solid #ccc;
