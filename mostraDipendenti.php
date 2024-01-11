@@ -95,6 +95,7 @@
             <!--aggiungi la possibilità di far vedere tutti i dipendenti-->
             <input type="submit" name="mostraTutti" value="Mostra tutti i dipendenti">
         </form>
+        <a href="home.php">Torna alla home</a>
         <?php
             if(isset($_POST["mostraTutti"])){
                 $query1 = "SELECT * FROM dipendente";
@@ -148,6 +149,5 @@
                 }
             }
         ?>
-        <a href="home.php">Torna alla home</a>
     </body>
 </html>
