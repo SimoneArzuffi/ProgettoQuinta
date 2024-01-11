@@ -21,7 +21,7 @@
         }
     ?>
     <head>
-        <title>Inserisci Ferie</title>
+        <title>Inserisci Malatia</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
