@@ -56,6 +56,7 @@
             <form action="mostraDipendenti.php" method="POST"><input type="submit" value="Visualizza Dipendenti"></form>
             <form action="rimuoviDipendente.php" method="POST"><input type="submit" value="Rimuovi Dipendente"></form>
             <form action="inserisciFerie.php" method="POST"><input type="submit" value="Inserisci Ferie"></form>
+            <form action="mostraFerie.php" method="POST"><input type="submit" value="Visualizza Ferie"></form>
             <form action="inserisciMalattia.php" method="POST"><input type="submit" value="Inserisci Malattia"></form>
             <form action="inserisciPermessi.php" method="POST"><input type="submit" value="Inserisci Permessi"></form>
             <form action="logout.php" method="POST"><input type="submit" value="Logout"></form>
