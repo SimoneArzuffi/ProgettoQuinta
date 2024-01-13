@@ -81,15 +81,33 @@
     </head>
     <body>
         <form action="mostraMalattia.php" method="POST">
-            <input type="submit" nome="mostraTutti" value="Mostra malattie">
+            <input type="text" name="nome" placeholder="Nome">
+            <input type="text" name="cognome" placeholder="Cognome">
+            <input type="submit" name="cerca" value="cerca">
+            <input type="submit" name="mostraTutti" value="Mostra malattie">
         </form>
         <a href="home.php">Torna alla home</a>
         <?php
         
-            //if(isset($_POST['mostraTutti'])){
+            if(isset($_POST['mostraTutti'])){
                 $query = "SELECT nome, cognome, numero_malattia, data_inizio, data_fine, giorni FROM dipendente, malattia WHERE dipendente.id = malattia.id_dipendente";
                 $result = mysqli_query($connessione, $query);
-            //}
+            }elseif(isset($_POST["nome"]) && isset($_POST["cognome"])){
+                if($_POST["nome"] != "" && $_POST["cognome"] != ""){
+                    $nome = $_POST["nome"];
+                    $cognome = $_POST["cognome"];
+                    $query = "SELECT nome, cognome, numero_malattia, data_inizio, data_fine, giorni FROM dipendente, malattia WHERE dipendente.id = malattia.id_dipendente AND nome = '$nome' AND cognome = '$cognome'";
+                    $result = mysqli_query($connessione, $query);
+                }elseif($_POST["nome"] != "" && $_POST["cognome"] == ""){
+                    $nome = $_POST["nome"];
+                    $query = "SELECT nome, cognome, numero_malattia, data_inizio, data_fine, giorni FROM dipendente, malattia WHERE dipendente.id = malattia.id_dipendente AND nome = '$nome'";
+                    $result = mysqli_query($connessione, $query);
+                }elseif($_POST["nome"] == "" && $_POST["cognome"] != ""){
+                    $cognome = $_POST["cognome"];
+                    $query = "SELECT nome, cognome, numero_malattia, data_inizio, data_fine, giorni FROM dipendente, malattia WHERE dipendente.id = malattia.id_dipendente AND cognome = '$cognome'";
+                    $result = mysqli_query($connessione, $query);
+                }
+            }
             
             if(isset($result)){
                 if (mysqli_num_rows($result) > 0) {
