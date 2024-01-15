@@ -60,6 +60,7 @@
                 <form action="inserisciMalattia.php" method="POST"><input type="submit" value="Inserisci Malattia"></form>
                 <form action="mostraMalattia.php" method="POST"><input type="submit" value="Visualizza Malattia"></form>
                 <form action="inserisciPermessi.php" method="POST"><input type="submit" value="Inserisci Permessi"></form>
+                <form action="mostraPermessi.php" method="POST"><input type="submit" value="Visualizza Permessi"></form>
                 <form action="logout.php" method="POST"><input type="submit" value="Logout"></form>
             </div>
         </div>
