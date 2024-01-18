@@ -7,7 +7,7 @@
     <head>
         <title>Mostra dipendenti
         </title>
-        <link rel="stylesheet" href="mostra.css">
+        <link rel="stylesheet" href="file_css/mostra.css">
     </head>
     <body>
         <!--aggiungi la possibilità di selezionare il dipendente desiderato tramite nome e cognome-->

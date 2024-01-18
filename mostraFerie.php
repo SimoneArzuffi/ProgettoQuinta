@@ -7,7 +7,7 @@
     <head>
         <title>Mostra ferie
         </title>
-        <link rel="stylesheet" href="mostra.css">
+        <link rel="stylesheet" href="file_css/mostra.css">
     </head>
     <body>
         <form action="mostraFerie.php" method="post">
