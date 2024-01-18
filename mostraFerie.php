@@ -7,77 +7,7 @@
     <head>
         <title>Mostra ferie
         </title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 20px;
-                background-color: #f4f4f4;
-            }
-
-            form {
-                width: 300px;
-                margin: 0 auto;
-                padding: 20px;
-                background-color: #fff;
-                border-radius: 8px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            }
-
-            p {
-                margin-top: 10px;
-                margin-bottom: 5px;
-            }
-
-            input[type="text"],
-            input[type="date"],
-            input[type="submit"] {
-                width: calc(100% - 10px);
-                padding: 10px;
-                margin-bottom: 15px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                font-size: 16px;
-            }
-
-            input[type="submit"] {
-                background-color: #4caf50;
-                color: #fff;
-                cursor: pointer;
-            }
-
-            input[type="submit"]:hover {
-                background-color: #218838;
-            }
-
-            a {
-                display: block;
-                margin-top: 10px;
-                text-align: center;
-                text-decoration: none;
-                color: #007bff;
-            }
-
-            table {
-                width: 100%;
-                border-collapse: collapse;
-                margin-top: 20px;
-            }
-
-            th, td {
-                padding: 10px;
-                border: 1px solid #ccc;
-            }
-
-            th {
-                background-color: #4caf50;
-                color: #fff;
-            }
-
-            tr:nth-child(even) {
-                background-color: #f2f2f2;
-            }
-        </style>
+        <link rel="stylesheet" href="mostra.css">
     </head>
     <body>
         <form action="mostraFerie.php" method="post">
