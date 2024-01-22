@@ -6,7 +6,7 @@
 <html>
     <head>
         <title>Permessi</title>
-        <link rel="stylesheet" href="file-css/mostra.css">
+        <link rel="stylesheet" href="file_css/mostra.css">
     </head>
     <body>
         <form action="mostraPermessi.php" method="post">
