@@ -62,6 +62,14 @@
                 <form action="inserisciPermessi.php" method="POST"><input type="submit" value="Inserisci Permessi"></form>
                 <form action="mostraPermessi.php" method="POST"><input type="submit" value="Visualizza Permessi"></form>
                 <form action="logout.php" method="POST"><input type="submit" value="Logout"></form>
+
+                
+
+            </div><br><br><br>
+
+            <p>area funzionalità in fase di creazione e test</p>
+            <div>
+                <form action="provaMostraDipendenti.php" method="post"><input type="submit" value="Prova Mostra Dipendenti"></form>
             </div>
         </div>
     </body>
