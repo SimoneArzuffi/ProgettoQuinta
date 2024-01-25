@@ -114,5 +114,7 @@
                 }
             }
         ?>
+
+        <a href="home.php">Torna alla home</a>
     </body>
 </html>
