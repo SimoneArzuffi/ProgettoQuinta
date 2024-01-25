@@ -10,12 +10,12 @@
     <body>
 
         <form>
-            <input type="button" id="button">
+            <input type="button" id="button" value="mostra">
         </form>
 
         <div id="tabella">
 
-        </div>
+        </div> 
 
         <script>
             document.addEventListener("DOMContentLoaded", function (event) {
@@ -69,7 +69,7 @@
 
             // Crea una richiesta XMLHttpRequest per inviare l'ID al server per l'eliminazione
             let deleteXhr = new XMLHttpRequest();
-            deleteXhr.open('POST', 'delete.php');
+            deleteXhr.open('POST', 'apiElimina.php');
             deleteXhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             deleteXhr.send('id=' + userId);
 
@@ -84,7 +84,7 @@
             };
         }
         </script>
+
+        <a href="home.php">Torna alla home</a>
     </body>
-
-
 </html>
