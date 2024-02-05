@@ -3,13 +3,12 @@
     include "connection.php";
 
     // Ottenere il parametro "k" dalla richiesta POST
-    $param = $_POST["k"];
 
     // Creare una query SQL per selezionare tutte le righe dalla tabella 'esempio' che hanno il campo 'nome' che contiene il parametro fornito
-    $sql = "SELECT * FROM `esempio` WHERE `nome` LIKE '%$param%'";
+    $sql = "SELECT * FROM `dipendente`;";
 
     // Eseguire la query e ottenere il risultato
-    $result = $conn->query($sql);
+    $result = $connessione->query($sql);
 
     // Ottenere tutte le righe del risultato come un array
     $res = $result->fetch_all();
@@ -20,6 +19,6 @@
         echo '<div class="user">' . $r[1] . ' <button class="delete-btn" data-id="' . $r[0] . '">Delete</button></div>';
     }
 
-    // Chiudere la connessione al database
-    $conn->close();
+    // Chiudere la cone$connessione al database
+    $connessione->close();
 ?>

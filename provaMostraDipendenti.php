@@ -32,7 +32,7 @@
             e.preventDefault();
 
             // Ottieni il valore inserito dall'utente
-            var contenuto = document.getElementById("valore").value;
+            var contenuto = document.getElementById("button").value;
 
             // Crea una richiesta XMLHttpRequest per inviare il valore al server
             let xhr = new XMLHttpRequest();
