@@ -103,7 +103,7 @@
             <p>Effettua l'accesso per continuare.</p>
         </div>
 
-        <script src="mostraPsw.js"></script>
+        <script src="js/mostraPsw.js"></script>
 
         <form action="login.php" method="POST">
             <input type="email" name="email" placeholder="Email" required><br><br>
