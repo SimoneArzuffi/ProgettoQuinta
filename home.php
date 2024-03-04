@@ -53,8 +53,7 @@
             <div class="button-container">
                 <form action="inserisciGestore.php" method="POST"><input type="submit" value="Inserisci Gestore"></form>
                 <form action="inserisciDipendente.php" method="POST"><input type="submit" value="Inserisci Dipendente"></form>
-                <form action="mostraDipendenti.php" method="POST"><input type="submit" value="Visualizza Dipendenti"></form>
-                <form action="rimuoviDipendente.php" method="POST"><input type="submit" value="Rimuovi Dipendente"></form>
+                <form action="mostraDipendenti.php" method="post"><input type="submit" value="Mostra Dipendenti"></form>
                 <form action="inserisciFerie.php" method="POST"><input type="submit" value="Inserisci Ferie"></form>
                 <form action="mostraFerie.php" method="POST"><input type="submit" value="Visualizza Ferie"></form>
                 <form action="inserisciMalattia.php" method="POST"><input type="submit" value="Inserisci Malattia"></form>
@@ -62,14 +61,11 @@
                 <form action="inserisciPermessi.php" method="POST"><input type="submit" value="Inserisci Permessi"></form>
                 <form action="mostraPermessi.php" method="POST"><input type="submit" value="Visualizza Permessi"></form>
                 <form action="logout.php" method="POST"><input type="submit" value="Logout"></form>
-
-                
-
             </div><br><br><br>
 
             <p>area funzionalità in fase di creazione e test</p>
             <div>
-                <form action="provaMostraDipendenti.php" method="post"><input type="submit" value="Prova Mostra Dipendenti"></form>
+                
             </div>
         </div>
     </body>
