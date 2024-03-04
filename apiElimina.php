@@ -1,12 +1,18 @@
 <?php
-    include "connection.php";
 
-    // Ottenere il parametro "id" dalla richiesta POST
-    $id = $_POST['id'];
-    // Creare una query SQL per eliminare la riga dalla tabella 'esempio' con l'ID fornito
-    $sql = "DELETE FROM `dipendente` WHERE `id` = $id;";
-    // Eseguire la query e ottenere il risultato
-    $result = $connessione->query($sql);
+    include "connection.php";
+    
+    $userId = $_POST['id'];
+
+    // Creare una query SQL per eliminare l'utente dalla tabella 'esempio' con l'ID specificato
+    $sql = "DELETE FROM `dipendente` WHERE id = $userId";
+
+    // Eseguire la query e verificare se l'eliminazione è avvenuta con successo
+    if (!$connessione->query($sql)) {
+        // Se c'è stato un errore durante l'eliminazione, stampare un messaggio di errore
+        echo "Error deleting user: " . $connessione->error;
+    }
+
     // Chiudere la connessione al database
     $connessione->close();
 

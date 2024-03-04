@@ -46,8 +46,9 @@ function onDeleteClick(e) {
 
     // Ottieni l'ID dell'utente associato al pulsante di eliminazione
     var userId = e.target.dataset.id;
+    //console.log(userId);
+    //redireziona alla pagina di modificare
 
-    // Crea una richiesta XMLHttpRequest per inviare l'ID al server per l'eliminazione
     let deleteXhr = new XMLHttpRequest();
     deleteXhr.open('POST', 'apiElimina.php');
     deleteXhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
