@@ -2,10 +2,24 @@
     //crea connessione con il database
     include "connection.php";
 
-    // Ottenere il parametro "k" dalla richiesta POST
+    // Ottenere i parametri nome e cognome dalla richiesta POST
+    $nome = $_POST['nome'];
+    $cognome = $_POST['cognome'];
 
-    // Creare una query SQL per selezionare tutte le righe dalla tabella 'esempio' che hanno il campo 'nome' che contiene il parametro fornito
-    $sql = "SELECT * FROM `dipendente`;";
+    // Controllare se i parametri sono vuoti
+    if ($nome == "" && $cognome == "") {
+        // Se sono vuoti, eseguire una query per ottenere tutti i dipendenti
+        $sql = "SELECT * FROM dipendenti";
+    } else if($nome == "" && $cognome != ""){
+        // Se il nome è vuoto e il cognome è pieno, eseguire una query per ottenere i dipendenti con quel cognome
+        $sql = "SELECT * FROM dipendenti WHERE cognome = '$cognome'";
+    } else if($nome != "" && $cognome == ""){
+        // Se il nome è pieno e il cognome è vuoto, eseguire una query per ottenere i dipendenti con quel nome
+        $sql = "SELECT * FROM dipendenti WHERE nome = '$nome'";
+    } else {
+        // Se entrambi i parametri sono pieni, eseguire una query per ottenere i dipendenti con quel nome e cognome
+        $sql = "SELECT * FROM dipendenti WHERE nome = '$nome' AND cognome = '$cognome'";
+    }
 
     // Eseguire la query e ottenere il risultato
     $result = $connessione->query($sql);

@@ -13,12 +13,17 @@ function sulClick(e) {
 
     // Ottieni il valore inserito dall'utente
     var contenuto = document.getElementById("button").value;
+    //ottieni nome e cognome
+    var nome = document.getElementById("nome").value;
+    var cognome = document.getElementById("cognome").value;
 
     // Crea una richiesta XMLHttpRequest per inviare il valore al server
     let xhr = new XMLHttpRequest();
     xhr.open('POST', 'apiMostra.php');
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhr.send('k=' + contenuto);
+    xhr.send('nome=' + nome);
+    xhr.send('cognome=' + cognome);
+
 
     // Gestisci la risposta del server
     xhr.onload = function () {

@@ -10,6 +10,10 @@
     <body>
 
         <form>
+            <!-- inserisci campi per ricerca dipendente -->
+            <input type="text" id="nome" placeholder="Nome">
+            <input type="text" id="cognome" placeholder="Cognome">
+            
             <input type="button" id="button" value="mostra">
         </form>
 
