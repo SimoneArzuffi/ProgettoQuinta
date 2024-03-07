@@ -21,8 +21,7 @@ function sulClick(e) {
     let xhr = new XMLHttpRequest();
     xhr.open('POST', 'apiMostra.php');
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhr.send('nome=' + nome);
-    xhr.send('cognome=' + cognome);
+    xhr.send('nome=' + nome + '&cognome=' + cognome);
 
 
     // Gestisci la risposta del server
