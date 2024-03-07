@@ -19,7 +19,7 @@ function sulClick(e) {
 
     // Crea una richiesta XMLHttpRequest per inviare il valore al server
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', 'apiMostra.php');
+    xhr.open('POST', 'api/apiMostra.php');
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.send('nome=' + nome + '&cognome=' + cognome);
 
@@ -54,7 +54,7 @@ function onDeleteClick(e) {
     //redireziona alla pagina di modificare
 
     let deleteXhr = new XMLHttpRequest();
-    deleteXhr.open('POST', 'apiElimina.php');
+    deleteXhr.open('POST', 'api/apiElimina.php');
     deleteXhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     deleteXhr.send('id=' + userId);
 

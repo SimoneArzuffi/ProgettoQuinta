@@ -18,7 +18,7 @@ function sulClick(e) {
 
     // Crea una richiesta XMLHttpRequest per inviare il valore al server
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', 'apiMostraFerie.php');
+    xhr.open('POST', 'api/apiMostraFerie.php');
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.send('nome=' + nome + '&cognome=' + cognome);
 
@@ -48,7 +48,7 @@ function onDeleteClick(e) {
 
     // Crea una richiesta XMLHttpRequest per inviare l'id al server
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', 'apiEliminaFerie.php');
+    xhr.open('POST', 'api/apiEliminaFerie.php');
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.send('id=' + id);
 
