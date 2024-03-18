@@ -10,3 +10,6 @@ RewriteRule ^dipendente/([0-9]+)/ferie$ ferie.php?id=$1 [L,QSA]
 
 # Gestisce URL per i permessi di un dipendente specifico
 RewriteRule ^dipendente/([0-9]+)/permessi$ permessi.php?id=$1 [L,QSA]
+
+# Gestisce URL per le malattie di un dipendente specifico
+RewriteRule ^dipendente/([0-9]+)/malattia$ malattia.php?id=$1 [L,QSA]
