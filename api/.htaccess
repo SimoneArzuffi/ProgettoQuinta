@@ -1,2 +1,0 @@
-RewriteEngine On
-RewriteRule ^dipendente$ dipendente.php [L,QSA]
