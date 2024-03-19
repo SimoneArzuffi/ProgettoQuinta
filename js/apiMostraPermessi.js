@@ -39,3 +39,26 @@ function sulClick(e) {
         }
     };
 }
+
+function onDeleteClick(e) {
+    // Ottieni l'id del record da eliminare
+    e.preventDefault();
+
+    var id = e.target.dataset.id;
+
+    // Crea una richiesta XMLHttpRequest per inviare l'id al server
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', 'api/apiEliminaPermessi.php');
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.send('id=' + id);
+
+    //gestisci la risposta del server
+    xhr.onload = function () {
+        if (xhr.status != 200) {
+            alert(`Error ${xhr.status}: ${xhr.statusText}`);
+        } else {
+            // Rimuovi la divisione dell'utente dal DOM
+            e.target.parentNode.remove();
+        }
+    };
+}
