@@ -65,7 +65,8 @@
 
             <p>area funzionalità in fase di creazione e test</p>
             <div>
-                <form action="provaMostraFerie.php" method="POST"><input type="submit" value="Prova Mostra Ferie"></form>
+                <form action="provaMostraFerie.php" method="POST"><input type="submit" value="Prova Mostra Ferie"></form><br>
+                <form action="provaMostraPermessi.php" method="POST"><input type="submit" value="Prova Mostra Permessi"></form>
             </div>
         </div>
     </body>
