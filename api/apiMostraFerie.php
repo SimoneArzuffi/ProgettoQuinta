@@ -8,9 +8,9 @@
     if ($nome == "" && $cognome == "") {
         $sql = "SELECT ferie.id, dipendente.nome, dipendente.cognome, ferie.data_inizio, ferie.data_fine, ferie.giorni FROM dipendente INNER JOIN ferie ON dipendente.id = ferie.id_dipendente";
     } else if($nome == "" && $cognome != ""){
-        "SELECT ferie.id, dipendente.nome, dipendente.cognome, ferie.data_inizio, ferie.data_fine, ferie.giorni FROM dipendente INNER JOIN ferie ON dipendente.id = ferie.id_dipendente WHERE dipendente.cognome = '$cognome'";
+        $sql = "SELECT ferie.id, dipendente.nome, dipendente.cognome, ferie.data_inizio, ferie.data_fine, ferie.giorni FROM dipendente INNER JOIN ferie ON dipendente.id = ferie.id_dipendente WHERE dipendente.cognome = '$cognome'";
     } else if($nome != "" && $cognome == ""){
-        "SELECT ferie.id, dipendente.nome, dipendente.cognome, ferie.data_inizio, ferie.data_fine, ferie.giorni FROM dipendente INNER JOIN ferie ON dipendente.id = ferie.id_dipendente WHERE dipendente.nome = '$nome'";
+        $sql = "SELECT ferie.id, dipendente.nome, dipendente.cognome, ferie.data_inizio, ferie.data_fine, ferie.giorni FROM dipendente INNER JOIN ferie ON dipendente.id = ferie.id_dipendente WHERE dipendente.nome = '$nome'";
     } else {
         $sql = "SELECT ferie.id, dipendente.nome, dipendente.cognome, ferie.data_inizio, ferie.data_fine, ferie.giorni FROM dipendente INNER JOIN ferie ON dipendente.id = ferie.id_dipendente WHERE dipendente.nome = '$nome' AND dipendente.cognome = '$cognome'";
     }
