@@ -1,5 +1,5 @@
 <?php
-    include "connection.php";
+    include "../connection.php";
 
     $nome = $_POST['nome'];
     $cognome = $_POST['cognome'];

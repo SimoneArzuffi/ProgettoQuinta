@@ -1,6 +1,6 @@
 <?php
     //crea connessione con il database
-    include "connection.php";
+    include "../connection.php";
 
     // Ottenere i parametri nome e cognome dalla richiesta POST
     $nome = $_POST['nome'];
