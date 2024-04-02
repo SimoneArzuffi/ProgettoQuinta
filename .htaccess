@@ -1,0 +1,16 @@
+RewriteEngine On
+
+# Gestisce URL con ID
+RewriteRule ^api/dipendente/([0-9]+)$ api/esposizione/dipendente.php?id=$1 [L,QSA]
+
+# Gestisce URL senza ID
+RewriteRule ^api/dipendente/?$ api/esposizione/dipendente.php [L,QSA]
+
+# Gestisce URL per le ferie di un dipendente specifico
+RewriteRule ^api/dipendente/([0-9]+)/ferie$ api/esposizione/ferie.php?id=$1 [L,QSA]
+
+# Gestisce URL per i permessi di un dipendente specifico
+RewriteRule ^api/dipendente/([0-9]+)/permessi$ api/esposizione/permessi.php?id=$1 [L,QSA]
+
+# Gestisce URL per le malattie di un dipendente specifico
+RewriteRule ^api/dipendente/([0-9]+)/malattia$ api/esposizione/malattia.php?id=$1 [L,QSA]
