@@ -55,19 +55,17 @@
                 <form action="inserisciDipendente.php" method="POST"><input type="submit" value="Inserisci Dipendente"></form>
                 <form action="mostraDipendenti.php" method="post"><input type="submit" value="Mostra Dipendenti"></form>
                 <form action="inserisciFerie.php" method="POST"><input type="submit" value="Inserisci Ferie"></form>
-                <form action="mostraFerie.php" method="POST"><input type="submit" value="Visualizza Ferie"></form>
+                <form action="mostraFerie.php" method="POST"><input type="submit" value="Prova Mostra Ferie"></form><br>
                 <form action="inserisciMalattia.php" method="POST"><input type="submit" value="Inserisci Malattia"></form>
-                <form action="mostraMalattia.php" method="POST"><input type="submit" value="Visualizza Malattia"></form>
+                <form action="mostraMalattia.php" method="POST"><input type="submit" value="Prova Mostra Malattia"></form>
                 <form action="inserisciPermessi.php" method="POST"><input type="submit" value="Inserisci Permessi"></form>
-                <form action="mostraPermessi.php" method="POST"><input type="submit" value="Visualizza Permessi"></form>
+                <form action="mostraPermessi.php" method="POST"><input type="submit" value="Prova Mostra Permessi"></form>
                 <form action="logout.php" method="POST"><input type="submit" value="Logout"></form>
             </div><br><br><br>
 
             <p>area funzionalità in fase di creazione e test</p>
             <div>
-                <form action="provaMostraFerie.php" method="POST"><input type="submit" value="Prova Mostra Ferie"></form><br>
-                <form action="provaMostraPermessi.php" method="POST"><input type="submit" value="Prova Mostra Permessi"></form><br>
-                <form action="provaMostraMalattia.php" method="POST"><input type="submit" value="Prova Mostra Malattia"></form>
+                
             </div>
         </div>
     </body>
