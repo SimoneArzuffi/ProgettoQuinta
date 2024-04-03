@@ -1,4 +1,4 @@
-CREATE TABLE gestore(
+CREATE TABLE IF NOT EXISTS gestore(
     id INT NOT NULL AUTO_INCREMENT,
     nome VARCHAR(255) NOT NULL,
     cognome VARCHAR(255) NOT NULL,
@@ -7,24 +7,27 @@ CREATE TABLE gestore(
     PRIMARY KEY(id)
 );
 
+CREATE TABLE IF NOT EXISTS azienda(
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS dipendente (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     cognome VARCHAR(255) NOT NULL,
     cf VARCHAR(16) UNIQUE NOT NULL,
     data_di_nascita DATE NOT NULL,
-    ore_di_permesso INT UNSIGNED NOT NULL,
-    giorni_di_ferie INT UNSIGNED NOT NULL,
-    giorni_di_malatia INT UNSIGNED NOT NULL
+    id_azienda INT UNSIGNED
 );
+
 
 CREATE TABLE IF NOT EXISTS ferie(
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     id_dipendente INT UNSIGNED NOT NULL,
     data_inizio DATE NOT NULL,
     data_fine DATE NOT NULL,
-    giorni INT UNSIGNED NOT NULL,
-    FOREIGN KEY(id_dipendente) REFERENCES dipendente(id)
+    giorni INT UNSIGNED NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS malattia(
@@ -33,8 +36,7 @@ CREATE TABLE IF NOT EXISTS malattia(
     numero_malattia VARCHAR(9) NOT NULL,
     data_inizio DATE NOT NULL,
     data_fine DATE NOT NULL,
-    giorni INT UNSIGNED NOT NULL,
-    FOREIGN KEY(id_dipendente) REFERENCES dipendente(id)
+    giorni INT UNSIGNED NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS permesso(
@@ -42,6 +44,5 @@ CREATE TABLE IF NOT EXISTS permesso(
     id_dipendente INT UNSIGNED NOT NULL,
     data DATE NOT NULL,
     ora_inizio TIME NOT NULL,
-    ora_fine TIME NOT NULL,
-    FOREIGN KEY(id_dipendente) REFERENCES dipendente(id)
+    ora_fine TIME NOT NULL
 );
