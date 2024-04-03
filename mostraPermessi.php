@@ -115,6 +115,6 @@
             }
         ?>
 
-        <a href="home.php">Torna alla home</a>
+        <a href="index.php">Torna alla home</a>
     </body>
 </html>

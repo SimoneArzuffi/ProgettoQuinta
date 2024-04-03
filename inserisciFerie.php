@@ -94,6 +94,6 @@
             <input type="submit" value="Inserisci Ferie">
         </form>
         <br>
-        <a href="home.php">Torna alla Home</a>
+        <a href="index.php">Torna alla Home</a>
     </body>
 </html>

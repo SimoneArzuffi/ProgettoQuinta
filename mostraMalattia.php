@@ -16,7 +16,7 @@
             <input type="submit" name="cerca" value="cerca">
             <input type="submit" name="mostraTutti" value="Mostra malattie">
         </form>
-        <a href="home.php">Torna alla home</a>
+        <a href="index.php">Torna alla home</a>
         <?php
         
             if(isset($_POST['mostraTutti'])){

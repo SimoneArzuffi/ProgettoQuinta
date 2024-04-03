@@ -4,7 +4,7 @@
         session_start();
         if(isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["data_di_nascita"]) && isset($_POST["cf"])){
             $_SESSION['POST'] = $_POST;
-            header('Location: /www/addDipendente.php');
+            header('Location: addDipendente.php');
         }
     ?>
     <head>
@@ -78,6 +78,6 @@
             <input type="submit" value="Inserisci Dipendente">
         </form>
         <br>
-        <a href="home.php">Torna alla Home</a>
+        <a href="index.php">Torna alla Home</a>
     </body>
 </html>

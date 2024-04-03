@@ -15,7 +15,7 @@
 		{
 			$un_record = $risultati->fetch_array(MYSQLI_ASSOC);
             if(password_verify($post['password'], $un_record['password'])){
-                header('Location: /www/home.php');
+                header('Location: index.php');
             }else{
                 echo "falso";
             }
@@ -25,7 +25,7 @@
 			$_SESSION['email'] = $un_record['email'];
 			$risultati->close();
 		}else{
-            header("Location: /www/login.php");
+            header("Location: ../login.php");
         }
 	}
 	$connessione->close();

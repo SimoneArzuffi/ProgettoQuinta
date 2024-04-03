@@ -16,7 +16,7 @@
             <input type="submit" value="cerca">
             <input type="submit" name="mostraTutti" value="Mostra ferie">
         </form>
-        <a href="home.php">Torna alla home</a>
+        <a href="index.php">Torna alla home</a>
         <?php
             if (isset($_POST['mostraTutti'])) {
                 $query = "SELECT nome, cognome, data_inizio, data_fine, giorni FROM dipendente, ferie WHERE dipendente.id = ferie.id_dipendente";

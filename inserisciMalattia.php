@@ -97,6 +97,6 @@
             <input type="submit" value="Inserisci malattia">
         </form>
         <br>
-        <a href="home.php">Torna alla Home</a>
+        <a href="index.php">Torna alla Home</a>
     </body>
 </html>

@@ -86,7 +86,7 @@
             <input type="button" onclick="myFunction()" value="Mostra Password"><br><br>
             <script src="mostraPsw.js"></script>
             <input type="submit" value="Inserisci Gestore"><br><br>
-            <a href="home.php">Torna alla Home</a>
+            <a href="index.php">Torna alla Home</a>
         </form>
     </body>
 </html>
