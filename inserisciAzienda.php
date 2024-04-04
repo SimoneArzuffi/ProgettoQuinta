@@ -69,7 +69,7 @@
         <form action="inserisciAzienda.php" method="POST">
             <p>Inserisci il nome dell'azienda</p>
             <input type="text" name="nome" placeholder="Nome" required><br>
-            <input type="submit" value="Inserisci Dipendente">
+            <input type="submit" value="Inserisci Azienda">
         </form>
         <br>
         <a href="index.php">Torna alla Home</a>
