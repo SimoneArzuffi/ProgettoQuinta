@@ -63,6 +63,22 @@
             a:hover {
                 text-decoration: underline;
             }
+
+            select {
+                width: calc(100% - 20px);
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+                transition: all 0.3s ease;
+            }
+
+            select {
+                display: block;
+                width: 100%;
+                cursor: pointer;
+            }
         </style>
     </head>
     <body>
@@ -75,6 +91,7 @@
             <input type="text" name="cf" placeholder="Codice Fiscale" style="text-transform: uppercase;" required><br>
             <p>Inserisci la data di nascita del dipendente</p>
             <input type="date" name="data_di_nascita" placeholder="Data di nascita" required><br>
+
             <input type="submit" value="Inserisci Dipendente">
         </form>
         <br>
