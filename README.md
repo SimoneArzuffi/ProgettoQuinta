@@ -74,7 +74,7 @@ docker run --name myXampp -p 41061:22 -p 41062:80 -d -v /workspaces/ProgettoQuin
 
 si consiglia l'utilizzo dell'estensione docker, quella ufficiale microsoft per facilitare lo start e lo stop di XAMPP.
 nel file query.sql sono presenti tutte le query per la creazione delle varie tabelle, il database andrà necessariamente chiamamto progetto_quinta.
-nella pagina di login non vi è la possibilità di registrarsi in quanto non necessario essendo un gestinale per le azione e non ad uso del pubblico, per registrare nuovi utenti bisogna necessariamente effettuare il login.
+nella pagina di login non vi è la possibilità di registrarsi in quanto non necessario essendo un gestionale per le aziende e non ad uso del pubblico, per registrare nuovi utenti bisogna necessariamente effettuare il login.
 
 credenziali per il login:
 - email: admin.progettoquinta@progettoquinta.com
