@@ -48,7 +48,8 @@ di seguito è elencato il mockup
 
 
 ###### E/R
-![E/R](immagini/image.png)
+![e/r](https://github.com/SimoneArzuffi/ProgettoQuinta/assets/101709449/205b5b73-3791-43a1-beeb-36e75baa98fd)
+
 
 ###### schema relazionale
 
@@ -62,7 +63,7 @@ MALATTIA(_ID_, NOME, COGNOME, NUMEROMALATTIA, DATAINIZIO, DATAFINE,NUMEROGIORNI,
 
 GESTORE(_ID_, NOME, COGNOME, EMAIL, PASSWORD)
 
-CONTROLLA(DIPENDENTE_ID, GESTORE_ID)
+AZIENDA(_ID_, NOME)
 
 ###### istruzioni per l'uso
 
