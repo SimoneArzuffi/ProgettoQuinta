@@ -15,7 +15,7 @@
 
     $sql = "INSERT INTO azienda (nome) VALUES ('" . $_POST['nome'] . "');";
 
-    if(!$risultati=$connessione->query($la_query)) {
+    if(!$risultati=$connessione->query($sql)) {
         echo("Errore nell'esecuzione della query: ".$connessione->error.".");
         exit();
     }
