@@ -28,7 +28,7 @@
     $res = $result->fetch_all();
 
     // Iterare attraverso ogni riga del risultato e stampare le informazioni desiderate
-    echo '<div class="user">Nome Cognome Azienda<';
+    echo '<div class="user">Nome Cognome Azienda</div>';
     foreach ($res as $r) {
         // Stampare una riga di HTML per ogni risultato, con il nome e cognome e un pulsante di eliminazione usa div 
         echo '<div class="user">' . $r[1] . " " . $r[2] . " " . $r[7] . ' <button class="delete-btn" data-id="' . $r[0] . '">Delete</button></div>';
