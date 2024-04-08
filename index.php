@@ -47,7 +47,7 @@
     ?>
     <body>
         <div class="container">
-            <h1>Benvenuto, <?php echo $_SESSION['nome']; ?>!</h1>
+            <h1>Benvenuto <?php echo $_SESSION['nome']; ?>!</h1>
             <p>Login effettuato con successo.</p>
 
             <div class="button-container">
