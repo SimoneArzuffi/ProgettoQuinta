@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Prova mostra permessi</title>
+    <title>Mostra permessi</title>
 </head>
 <body>
     <h1>Mostra permessi</h1>
