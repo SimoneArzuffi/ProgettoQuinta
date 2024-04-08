@@ -47,7 +47,7 @@ function onDeleteClick(e) {
     var id = e.target.dataset.id;
 
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', 'api/apiEliminaFerie.php'); // Cambia con il tuo URL effettivo per l'eliminazione
+    xhr.open('POST', 'api/apiElimina.php'); // Cambia con il tuo URL effettivo per l'eliminazione
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.send('id=' + id);
 
