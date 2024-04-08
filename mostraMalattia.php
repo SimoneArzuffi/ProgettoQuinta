@@ -4,7 +4,7 @@
     <title>Prova mostra malattia</title>
 </head>
 <body>
-    <h1>Prova mostra ferie</h1>
+    <h1>Mostra ferie</h1>
     <form action="provaMostraMalattia.php" method="post">
         <input type="text" id="nome" placeholder="Nome">
         <input type="text" id="cognome" placeholder="Cognome">

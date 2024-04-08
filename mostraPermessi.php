@@ -4,7 +4,7 @@
     <title>Prova mostra permessi</title>
 </head>
 <body>
-    <h1>Prova mostra permessi</h1>
+    <h1>Mostra permessi</h1>
     <form action="provaMostraPermessi.php" method="post">
         <input type="text" id="nome" placeholder="Nome">
         <input type="text" id="cognome" placeholder="Cognome">
