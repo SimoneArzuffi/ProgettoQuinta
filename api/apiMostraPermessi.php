@@ -17,6 +17,8 @@
 
     $res = $result->fetch_all();
 
+    echo "Nome Cognome Data Ora Inizio Ora Fine </br>";
+
     foreach ($res as $r) {
         //stampa nome e cognome giorno e orario di inizio e fine
         echo $r[6] . " ". $r[7] . " " . $r[2] . " " . $r[3] . " " . $r[4] . " ". ' <button class="delete-btn" data-id="' . $r[0] . '">Delete</button></div>' . "<br>";

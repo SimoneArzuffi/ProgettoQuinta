@@ -19,6 +19,7 @@
 
     $res = $result->fetch_all();
 
+    echo "Nome Cognome Data Inizio Data Fine Giorni </br>";
     foreach ($res as $r) {
         echo '<div class="ferie">' .
             $r[1] . " " . $r[2] . " " . $r[3] . " " . $r[4] . " " . $r[5] . ' <button class="delete-btn" data-id="' . $r[0] . '">Delete</button></div>';

@@ -18,9 +18,11 @@
 
     $res = $result->fetch_all();
 
+    echo "Nome Cognome Data Inizio Data Fine Giorni Numero Malattia </br>";
+
     foreach ($res as $r) {
         
-        echo $r[7] . " ". $r[8] . " " . $r[2] . " " . $r[3] . " " . $r[4] . " " . ' <button class="delete-btn" data-id="' . $r[0] . '">Delete</button></div>' . "<br>";
+        echo $r[7] . " ". $r[8] . " " . " " . $r[3] . " " . $r[4] . " " . $r[2] . ' <button class="delete-btn" data-id="' . $r[0] . '">Delete</button></div>' . "<br>";
     }
 
     $connessione -> close();
