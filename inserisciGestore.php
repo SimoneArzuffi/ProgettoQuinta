@@ -2,7 +2,8 @@
 <html>
     <?php
         session_start();
-        if(isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["email"]) && isset($_POST["password"])){
+        include "../connection.php";
+        if(isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["azienda"])){
             $_SESSION['POST'] = $_POST;
             header('Location: /www/addGestore.php');
         }
@@ -85,6 +86,18 @@
             <input type="password" name="password" placeholder="Password" required>
             <input type="button" onclick="myFunction()" value="Mostra Password"><br><br>
             <script src="mostraPsw.js"></script>
+            <?php
+                $sql = "SELECT * FROM azienda";
+                $result = $connessione->query($sql);
+                if($result->num_rows > 0){
+                    echo "<select name='azienda' id='azienda'>";
+                    echo "<option value='0'>Seleziona l'azienda</option>";
+                    while($row = $result->fetch_assoc()){
+                        echo "<option value='".$row['id']."'>" . $row['nome'] . "</option>";
+                    }
+                    echo "</select>";
+                }
+            ?>
             <input type="submit" value="Inserisci Gestore"><br><br>
             <a href="index.php">Torna alla Home</a>
         </form>

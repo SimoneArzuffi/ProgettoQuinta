@@ -103,7 +103,7 @@
                     }
                     echo "</select>";
                 }
-                ?>
+            ?>
             <input type="submit" value="Inserisci Dipendente">
         </form>
         <br>

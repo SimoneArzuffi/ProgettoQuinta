@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS gestore(
     cognome VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
+    ruolo INT NOT NULL,
     PRIMARY KEY(id)
 );
 

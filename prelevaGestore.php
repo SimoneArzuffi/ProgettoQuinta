@@ -23,6 +23,7 @@
 			$_SESSION['nome'] = $un_record['nome'];
 			$_SESSION['cognome'] = $un_record['cognome'];
 			$_SESSION['email'] = $un_record['email'];
+			$_SESSION['ruolo'] = $un_record['ruolo'];
 			$risultati->close();
 		}else{
             header("Location: ../login.php");

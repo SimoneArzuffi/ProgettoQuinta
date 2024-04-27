@@ -44,6 +44,7 @@
         if (!isset($_SESSION['nome'])) {
             header("Location: login.php");
         }
+        echo $_SESSION['ruolo'];
     ?>
     <body>
         <div class="container">
@@ -52,8 +53,12 @@
 
             <div class="button-container">
                 <form action="inserisciGestore.php" method="POST"><input type="submit" value="Inserisci Gestore"></form>
-                <form action="inserisciAzienda.php" method="POST"><input type="submit" value="Inserisci Azienda"></form>
-                <form action="mostraAziende.php" method="POST"><input type="submit" value="Mostra Aziende"></form>
+                <?php 
+                    if($_SESSION['ruolo'] == 0){
+                        echo '<form action="inserisciAzienda.php" method="POST"><input type="submit" value="Inserisci Azienda"></form>';
+                        echo '<form action="mostraAziende.php" method="POST"><input type="submit" value="Mostra Aziende"></form>';
+                    }
+                ?>
                 <form action="inserisciDipendente.php" method="POST"><input type="submit" value="Inserisci Dipendente"></form>
                 <form action="mostraDipendenti.php" method="post"><input type="submit" value="Mostra Dipendenti"></form>
                 <form action="inserisciFerie.php" method="POST"><input type="submit" value="Inserisci Ferie"></form>
