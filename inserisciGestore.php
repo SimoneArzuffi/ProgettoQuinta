@@ -2,7 +2,7 @@
 <html>
     <?php
         session_start();
-        include "../connection.php";
+        include "connection.php";
         if(isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["azienda"])){
             $_SESSION['POST'] = $_POST;
             header('Location: /www/addGestore.php');
@@ -91,7 +91,7 @@
                 $result = $connessione->query($sql);
                 if($result->num_rows > 0){
                     echo "<select name='azienda' id='azienda'>";
-                    echo "<option value='0'>Seleziona l'azienda</option>";
+                    echo "<option value='0'>Admin</option>";
                     while($row = $result->fetch_assoc()){
                         echo "<option value='".$row['id']."'>" . $row['nome'] . "</option>";
                     }

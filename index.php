@@ -44,7 +44,6 @@
         if (!isset($_SESSION['nome'])) {
             header("Location: login.php");
         }
-        echo $_SESSION['ruolo'];
     ?>
     <body>
         <div class="container">
@@ -52,9 +51,9 @@
             <p>Login effettuato con successo.</p>
 
             <div class="button-container">
-                <form action="inserisciGestore.php" method="POST"><input type="submit" value="Inserisci Gestore"></form>
                 <?php 
                     if($_SESSION['ruolo'] == 0){
+                        echo '<form action="inserisciGestore.php" method="POST"><input type="submit" value="Inserisci Gestore"></form>';
                         echo '<form action="inserisciAzienda.php" method="POST"><input type="submit" value="Inserisci Azienda"></form>';
                         echo '<form action="mostraAziende.php" method="POST"><input type="submit" value="Mostra Aziende"></form>';
                     }
