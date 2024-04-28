@@ -1,4 +1,5 @@
 <?php
+    session_start();
     //crea connessione con il database
     include "../connection.php";
 
@@ -9,16 +10,28 @@
     // Controllare se i parametri sono vuoti
     if ($nome == "" && $cognome == "") {
         // Se sono vuoti, eseguire una query per ottenere tutti i dipendenti
-        $sql = "SELECT * FROM dipendente INNER JOIN azienda ON dipendente.id_azienda = azienda.id;";
+        $sql = "SELECT * FROM dipendente INNER JOIN azienda ON dipendente.id_azienda = azienda.id";
+        if($_SESSION['ruolo'] != 0){
+            $sql = $sql . " WHERE azienda.id = " . $_SESSION['ruolo'] . ";";
+        }
     } else if($nome == "" && $cognome != ""){
         // Se il nome è vuoto e il cognome è pieno, eseguire una query per ottenere i dipendenti con quel cognome
         $sql = "SELECT * FROM dipendente INNER JOIN azienda ON dipendente.id_azienda = azienda.id WHERE cognome = '$cognome'";
+        if($_SESSION['ruolo'] != 0){
+            $sql = $sql . " AND azienda.id = " . $_SESSION['ruolo'] . ";";
+        }
     } else if($nome != "" && $cognome == ""){
         // Se il nome è pieno e il cognome è vuoto, eseguire una query per ottenere i dipendenti con quel nome
-        $sql = "SELECT * FROM dipendente INNER JOIN azienda ON dipendente.id_azienda = azienda.id WHERE nome = '$nome'";
+        $sql = "SELECT * FROM dipendente INNER JOIN azienda ON dipendente.id_azienda = azienda.id WHERE dipendente.nome = '$nome'";
+        if($_SESSION['ruolo'] != 0){
+            $sql = $sql . " AND azienda.id = " . $_SESSION['ruolo'] . ";";
+        }
     } else {
         // Se entrambi i parametri sono pieni, eseguire una query per ottenere i dipendenti con quel nome e cognome
-        $sql = "SELECT * FROM dipendente INNER JOIN azienda ON dipendente.id_azienda = azienda.id WHERE nome = '$nome' AND cognome = '$cognome'";
+        $sql = "SELECT * FROM dipendente INNER JOIN azienda ON dipendente.id_azienda = azienda.id WHERE dipendente.nome = '$nome' AND cognome = '$cognome'";
+        if($_SESSION['ruolo'] != 0){
+            $sql = $sql . " AND azienda.id = " . $_SESSION['ruolo'] . ";";
+        }
     }
 
     // Eseguire la query e ottenere il risultato

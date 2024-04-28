@@ -6,12 +6,24 @@
 
     if($nome == "" && $cognome == ""){
         $sql = "SELECT * FROM malattia INNER JOIN dipendente ON malattia.id_dipendente = dipendente.id";
+        if($_SESSION['ruolo'] != 0){
+            $sql = $sql . " WHERE dipendente.id_azienda = " . $_SESSION['ruolo'] . ";";
+        }
     } else if($nome == "" && $cognome != ""){
         $sql = "SELECT * FROM malattia INNER JOIN dipendente ON malattia.id_dipendente = dipendente.id WHERE cognome = '$cognome'";
+        if($_SESSION['ruolo'] != 0){
+            $sql = $sql . " AND dipendente.id_azienda = " . $_SESSION['ruolo'] . ";";
+        }
     } else if($nome != "" && $cognome == ""){
         $sql = "SELECT * FROM malattia INNER JOIN dipendente ON malattia.id_dipendente = dipendente.id WHERE nome = '$nome'";
+        if($_SESSION['ruolo'] != 0){
+            $sql = $sql . " AND dipendente.id_azienda = " . $_SESSION['ruolo'] . ";";
+        }
     } else {
         $sql = "SELECT * FROM malattia INNER JOIN dipendente ON malattia.id_dipendente = dipendente.id WHERE nome = '$nome' AND cognome = '$cognome'";
+        if($_SESSION['ruolo'] != 0){
+            $sql = $sql . " AND dipendente.id_azienda = " . $_SESSION['ruolo'] . ";";
+        }
     }
 
     $result = $connessione->query($sql);
