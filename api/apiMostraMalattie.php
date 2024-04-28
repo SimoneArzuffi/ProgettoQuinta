@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include "../connection.php";
 
     $nome = $_POST['nome'];
