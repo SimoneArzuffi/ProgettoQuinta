@@ -54,6 +54,7 @@
                 <?php 
                     if($_SESSION['ruolo'] == 0){
                         echo '<form action="inserisciGestore.php" method="POST"><input type="submit" value="Inserisci Gestore"></form>';
+                        echo '<form action="mostraGestore.php" method="POST"><input type="submit" value="Mostra Gestore"></form>';
                         echo '<form action="inserisciAzienda.php" method="POST"><input type="submit" value="Inserisci Azienda"></form>';
                         echo '<form action="mostraAziende.php" method="POST"><input type="submit" value="Mostra Aziende"></form>';
                     }
