@@ -48,8 +48,7 @@ di seguito è elencato il mockup
 
 
 ###### E/R
-![e/r](https://github.com/SimoneArzuffi/ProgettoQuinta/assets/101709449/205b5b73-3791-43a1-beeb-36e75baa98fd)
-
+![E/R](https://github.com/SimoneArzuffi/ProgettoQuinta/assets/101709449/d7c0cd34-e8af-48a0-8d5d-24a0ceb0c76e)
 
 ###### schema relazionale
 
