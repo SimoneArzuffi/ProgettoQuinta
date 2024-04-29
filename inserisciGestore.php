@@ -85,7 +85,7 @@
             <p>Inserisci la password del gestore</p>
             <input type="password" name="password" placeholder="Password" required>
             <input type="button" onclick="myFunction()" value="Mostra Password"><br><br>
-            <script src="mostraPsw.js"></script>
+            <script src="js/mostraPsw.js"></script>
             <?php
                 $sql = "SELECT * FROM azienda";
                 $result = $connessione->query($sql);
