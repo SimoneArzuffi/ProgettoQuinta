@@ -69,11 +69,6 @@
                 <form action="mostraPermessi.php" method="POST"><input type="submit" value="Mostra Permessi"></form>
                 <form action="logout.php" method="POST"><input type="submit" value="Logout"></form>
             </div><br><br><br>
-
-            <p>area funzionalità in fase di creazione e test</p>
-            <div>
-
-            </div>
         </div>
     </body>
 </html>
