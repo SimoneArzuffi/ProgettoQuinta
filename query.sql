@@ -1,4 +1,8 @@
+DROP DATABASE progetto_quinta;
+
 CREATE DATABASE progetto_quinta;
+
+USE progetto_quinta;
 
 CREATE TABLE IF NOT EXISTS gestore(
     id INT NOT NULL AUTO_INCREMENT,
