@@ -12,7 +12,7 @@
     else {
         if($risultati->num_rows == 0)  
         {
-            $la_query = "INSERT INTO gestore (nome, cognome, email, password) VALUES ('Simone' , 'Arzuffi', 'admin.progettoquinta@progettoquinta.com', '" . password_hash("admin", PASSWORD_DEFAULT) . "')";
+            $la_query = "INSERT INTO gestore (nome, cognome, email, password, ruolo) VALUES ('Simone' , 'Arzuffi', 'admin.progettoquinta@progettoquinta.com', '" . password_hash("admin", PASSWORD_DEFAULT) . "', '0" .  "')";
             //esegui query per inserire l'utente admin
             if(!$risultati=$connessione->query($la_query)) {
                 echo("Errore nell'esecuzione della query: ".$connessione->error.".");
