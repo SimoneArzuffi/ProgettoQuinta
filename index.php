@@ -59,13 +59,14 @@
                         echo '<form action="mostraAziende.php" method="POST"><input type="submit" value="Mostra Aziende"></form>';
                     }
                 ?>
+                <!-- -->
                 <form action="inserisciDipendente.php" method="POST"><input type="submit" value="Inserisci Dipendente"></form>
                 <form action="mostraDipendenti.php" method="post"><input type="submit" value="Mostra Dipendenti"></form>
-                <form action="inserisciFerie.php" method="POST"><input type="submit" value="Inserisci Ferie"></form>
+                <!--<form action="inserisciFerie.php" method="POST"><input type="submit" value="Inserisci Ferie"></form>-->
                 <form action="mostraFerie.php" method="POST"><input type="submit" value="Mostra Ferie"></form><br>
-                <form action="inserisciMalattia.php" method="POST"><input type="submit" value="Inserisci Malattia"></form>
+                <!--<form action="inserisciMalattia.php" method="POST"><input type="submit" value="Inserisci Malattia"></form>-->
                 <form action="mostraMalattia.php" method="POST"><input type="submit" value="Mostra Malattia"></form>
-                <form action="inserisciPermessi.php" method="POST"><input type="submit" value="Inserisci Permessi"></form>
+                <!--<form action="inserisciPermessi.php" method="POST"><input type="submit" value="Inserisci Permessi"></form>-->
                 <form action="mostraPermessi.php" method="POST"><input type="submit" value="Mostra Permessi"></form>
                 <form action="logout.php" method="POST"><input type="submit" value="Logout"></form>
             </div><br><br><br>
