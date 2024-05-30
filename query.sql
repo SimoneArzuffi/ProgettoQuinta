@@ -1,4 +1,4 @@
-DROP DATABASE progetto_quinta;
+DROP DATABASE IF EXISTS progetto_quinta;
 
 CREATE DATABASE progetto_quinta;
 
