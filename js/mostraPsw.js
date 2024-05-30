@@ -1,5 +1,5 @@
 function myFunction() {
-    var x = document.getElementsByName("password")[0];
+    var x = document.getElementById("password");
     if (x.type === "password") {
         x.type = "text";
     } else {

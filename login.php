@@ -107,7 +107,7 @@
 
         <form action="login.php" method="POST">
             <input type="email" name="email" placeholder="Email" required><br><br>
-            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
             <input type="button" onclick="myFunction()" value="Mostra Password"><br><br>
             <input type="submit" value="Accedi">
         </form><br>
