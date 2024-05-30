@@ -4,11 +4,11 @@
     // Aggiungi un listener al click del pulsante di ricerca
     var button = document.getElementById("button");
     button.addEventListener("click", eseguiRichiesta);
-});*/
+});
 
 $(document).ready(function(){
     eseguiRichiesta();
-});
+});*/
 
 function eseguiRichiesta() {
     // Ottieni il valore inserito dall'utente
