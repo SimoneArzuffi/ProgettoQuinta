@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     // Aggiungi un listener al click del pulsante di ricerca
     var button = document.getElementById("button");
     button.addEventListener("click", sulClick);
+    button.click();
 });
 function sulClick(e) {
     e.preventDefault(); // Impedisci il comportamento predefinito del form (evita il ricaricamento della pagina)
@@ -36,8 +37,6 @@ function sulClick(e) {
             });
         }
     };
-
-    alert("ciao");
 
     return false; // Evita ulteriori azioni di default del form
 }

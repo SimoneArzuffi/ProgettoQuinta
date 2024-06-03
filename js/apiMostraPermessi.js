@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     // Aggiungi un listener al click del pulsante di ricerca
     var button = document.getElementById("mostra");
     button.addEventListener("click", sulClick);
+    button.click();
 });
 
 function sulClick(e) {
