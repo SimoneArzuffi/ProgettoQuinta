@@ -78,9 +78,35 @@
             a:hover {
                 text-decoration: underline;
             }
+            .message {
+                width: 300px;
+                margin: 0 auto 15px;
+                padding: 10px;
+                border-radius: 5px;
+                text-align: center;
+            }
+
+            .success {
+                background-color: #d4edda;
+                color: #155724;
+                border: 1px solid #c3e6cb;
+            }
+
+            .error {
+                background-color: #f8d7da;
+                color: #721c24;
+                border: 1px solid #f5c6cb;
+            }
         </style>
     </head>
     <body>
+        <?php
+            if (isset($_SESSION['message'])) {
+                echo '<div class="message ' . $_SESSION['message_type'] . '">' . $_SESSION['message'] . '</div>';
+                unset($_SESSION['message']);
+                unset($_SESSION['message_type']);
+            }
+        ?>
         <form action="inserisciMalattia.php" method="POST">
             <p>Inserisci il nome del dipendente</p>
             <input type="text" name="nome" placeholder="Nome" required><br>
