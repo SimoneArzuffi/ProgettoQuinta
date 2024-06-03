@@ -1,29 +1,52 @@
 <?php
-    include "connection.php";
     session_start();
+    include "connection.php";
 
-    $post = $_SESSION['POST'];
-
-    //controlla se esiste il gestore che si vuole inserire
-    $la_query = "SELECT * FROM gestore WHERE email = '" . $post['email'] . "'";
-    if(!$risultati=$connessione->query($la_query)) {
-        echo("Errore nell'esecuzione della query: ".$connessione->error.".");
+    if (!isset($_SESSION['POST'])) {
+        $_SESSION['message'] = "Nessun dato inviato.";
+        $_SESSION['message_type'] = "error";
+        header("Location: inserisciGestore.php");
         exit();
     }
-    else {
-        if($risultati->num_rows == 0)  
-        {
-            //esegui query per inserire il gestore
-            $la_query = "INSERT INTO gestore (nome, cognome, email, password, ruolo) VALUES ('" . $post['nome'] . "' , '" . $post['cognome'] . "', '" . $post['email'] . "', '" . password_hash($post['password'], PASSWORD_DEFAULT) . "', '". $post['azienda'] . "')";
-            if(!$risultati=$connessione->query($la_query)) {
-                echo("Errore nell'esecuzione della query: ".$connessione->error.".");
-                exit();
-            }
-            $connessione -> close();
-        }
-    }
-    header("Location: inserisciGestore.php");
-?>
-<body>
 
-</body>
+    $post = $_SESSION['POST'];
+    unset($_SESSION['POST']); // Clear session data to prevent resubmission
+
+    // Check if the gestore already exists
+    $la_query = "SELECT * FROM gestore WHERE email = ?";
+    $stmt = $connessione->prepare($la_query);
+    $stmt->bind_param("s", $post['email']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $_SESSION['message'] = "Gestore con questa email esiste già.";
+        $_SESSION['message_type'] = "error";
+        $stmt->close();
+        $connessione->close();
+        header("Location: inserisciGestore.php");
+        exit();
+    }
+
+    $stmt->close();
+
+    // Insert new gestore
+    $la_query = "INSERT INTO gestore (nome, cognome, email, password, ruolo) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $connessione->prepare($la_query);
+    $password_hashed = password_hash($post['password'], PASSWORD_DEFAULT);
+    $stmt->bind_param("sssss", $post['nome'], $post['cognome'], $post['email'], $password_hashed, $post['azienda']);
+
+    if ($stmt->execute()) {
+        $_SESSION['message'] = "Gestore aggiunto con successo!";
+        $_SESSION['message_type'] = "success";
+    } else {
+        $_SESSION['message'] = "Errore nell'aggiungere il gestore: " . $stmt->error;
+        $_SESSION['message_type'] = "error";
+    }
+
+    $stmt->close();
+    $connessione->close();
+
+    header("Location: inserisciGestore.php");
+    exit();
+?>
