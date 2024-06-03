@@ -10,7 +10,7 @@
     // Controllare se i parametri sono vuoti
     if ($nome == "" && $cognome == "") {
         // Se sono vuoti, eseguire una query per ottenere tutti i dipendenti
-        $sql = "SELECT * FROM dipendente INNER JOIN azienda ON dipendente.id_azienda = azienda.id";
+        $sql = "SELECT * FROM dipendente INNER JOIN azienda ON dipendente.id_azienda = azienda.id;";
         if($_SESSION['ruolo'] != 0){
             $sql = $sql . " WHERE azienda.id = " . $_SESSION['ruolo'] . ";";
         }

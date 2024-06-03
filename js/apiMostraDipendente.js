@@ -1,27 +1,23 @@
-/*document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", function (event) {
     console.log("DOM fully loaded and parsed");
 
     // Aggiungi un listener al click del pulsante di ricerca
     var button = document.getElementById("button");
     button.addEventListener("click", eseguiRichiesta);
+    //fai in modo che il pulsante di ricerca venga premuto automaticamente
+    button.click();
 });
-
-$(document).ready(function(){
-    eseguiRichiesta();
-});*/
-function eseguiRichiesta() {
+function eseguiRichiesta(e) {
+    e.preventDefault(); // Impedisci il comportamento predefinito del form (evita il ricaricamento della pagina)
     // Ottieni il valore inserito dall'utente
     var nome = document.getElementById("nome").value;
     var cognome = document.getElementById("cognome").value;
 
-    console.log("Nome:", nome);
-    console.log("Cognome:", cognome);
-
     // Crea una richiesta XMLHttpRequest per inviare i valori al server
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', '../api/apiMostra.php', true); // Assicurati che l'URL sia corretto
+    xhr.open('POST', 'api/apiMostra.php', true); // Assicurati che l'URL sia corretto
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhr.send('nome=' + encodeURIComponent(nome) + '&cognome=' + encodeURIComponent(cognome));
+    xhr.send('nome=' + nome + '&cognome=' + cognome);
 
     // Gestisci la risposta del server
     xhr.onload = function () {
