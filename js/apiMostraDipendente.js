@@ -9,7 +9,6 @@
 $(document).ready(function(){
     eseguiRichiesta();
 });*/
-
 function eseguiRichiesta() {
     // Ottieni il valore inserito dall'utente
     var nome = document.getElementById("nome").value;
